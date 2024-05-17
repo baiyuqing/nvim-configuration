@@ -64,9 +64,17 @@ end
 lspconfig.pylsp.setup({
 	on_attach = on_attach,
 })
-
+local util = require "lspconfig/util"
 require'lspconfig'.gopls.setup{
-    on_attach = on_attach
+    on_attach = on_attach,
+    cmd = {'/Users/baiyuqing/.gvm/pkgsets/go1.22.3/global/bin/gopls', 'serve'},
+    settings = {
+        gopls = {
+          experimentalWorkspaceModule = true
+        }
+      },
+      root_dir = util.root_pattern("go.work", "go.mod", ".git")
+
 }
 require'lspconfig'.rust_analyzer.setup{
     on_attach = on_attach
@@ -80,3 +88,5 @@ require'lspconfig'.tsserver.setup{
 require'lspconfig'.azure_pipelines_ls.setup{
     on_attach = on_attach
 }
+
+vim.lsp.set_log_level("debug")

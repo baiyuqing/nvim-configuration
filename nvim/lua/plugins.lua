@@ -70,6 +70,28 @@ return require('packer').startup(function(use)
 	        -- install jsregexp (optional!:).
 	        run = "make install_jsregexp"
         })
+
+        use {
+          "hrsh7th/nvim-cmp",
+          requires = {
+              "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
+              'quangnguyen30192/cmp-nvim-ultisnips', 'hrsh7th/cmp-nvim-lua',
+              'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
+              'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
+          }
+      }
+      use {
+          'tzachar/cmp-tabnine',
+          run = './install.sh',
+          requires = 'hrsh7th/nvim-cmp'
+      }
+
+
+    use {'fatih/vim-go'}
+    use {"stevearc/aerial.nvim"}
+
+    use {'rust-lang/rust.vim'}
+
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
         if packer_bootstrap then
