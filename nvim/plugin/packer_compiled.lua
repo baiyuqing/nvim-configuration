@@ -132,7 +132,7 @@ _G.packer_plugins = {
     url = "https://github.com/tanvirtin/monokai.nvim"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-path", "cmp-cmdline", "cmp-buffer", "cmp-nvim-lsp" },
+    after = { "cmp-cmdline", "cmp-nvim-lsp", "cmp-path", "cmp-buffer" },
     config = { "require('config.nvim-cmp')" },
     loaded = true,
     only_config = true,
@@ -183,10 +183,10 @@ require('config.nvim-cmp')
 time([[Config for nvim-cmp]], false)
 -- Load plugins in order defined by `after`
 time([[Sequenced loading]], true)
-vim.cmd [[ packadd cmp-cmdline ]]
-vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-nvim-lsp ]]
+vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-buffer ]]
+vim.cmd [[ packadd cmp-cmdline ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false
