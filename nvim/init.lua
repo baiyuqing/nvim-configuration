@@ -4,11 +4,6 @@ require('plugins')
 require('colorsheme')
 require('lsp')
 require('bai')
-require'lspconfig'.gopls.setup{}
-require'lspconfig'.rust_analyzer.setup{}
-require'lspconfig'.pyright.setup{}
-require'lspconfig'.tsserver.setup{}
-require'lspconfig'.azure_pipelines_ls.setup{}
 
 -- 配置 nvim-treesitter
 require'nvim-treesitter.configs'.setup {

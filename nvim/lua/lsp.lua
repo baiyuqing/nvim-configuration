@@ -64,3 +64,19 @@ end
 lspconfig.pylsp.setup({
 	on_attach = on_attach,
 })
+
+require'lspconfig'.gopls.setup{
+    on_attach = on_attach
+}
+require'lspconfig'.rust_analyzer.setup{
+    on_attach = on_attach
+}
+require'lspconfig'.pyright.setup{
+    on_attach = on_attach
+}
+require'lspconfig'.tsserver.setup{
+    on_attach = on_attach
+}
+require'lspconfig'.azure_pipelines_ls.setup{
+    on_attach = on_attach
+}
