@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
         -- NOTE: PUT YOUR THIRD PLUGIN HERE --
         ---------------------------------------
         use 'tanvirtin/monokai.nvim'
-        use { 'neovim/nvim-lspconfig' }
+        --use { 'neovim/nvim-lspconfig' }
         use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
         use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
         use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' } -- buffer auto-completion
@@ -91,6 +91,16 @@ return require('packer').startup(function(use)
     use {"stevearc/aerial.nvim"}
 
     use {'rust-lang/rust.vim'}
+    use {'sindrets/diffview.nvim'}
+    use { "catppuccin/nvim", as = "catppuccin" }
+    use { "ibhagwan/fzf-lua",
+        -- optional for icon support
+        requires = { "nvim-tree/nvim-web-devicons" }
+    }
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+            require("toggleterm").setup()
+        end
+    }
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins
