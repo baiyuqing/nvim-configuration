@@ -1,3 +1,7 @@
+local M = {};
+
+_G['my_telescope'] = M;
+
 module = {}
 
 require('telescope').setup{
@@ -38,8 +42,19 @@ require('telescope').setup{
 --
 
 local builtin = require('telescope.builtin')
+local api = vim.api
+
+function M.my_live_grep() 
+    local word = vim.fn.expand("<cword>")
+    builtin.live_grep()
+    api.nvim_feedkeys(word, 'n', true)
+end
+
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {noremap = true, silent = true})
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
 vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, {})
-vim.keymap.set('n', 'ff', builtin.live_grep, {})
+-- vim.keymap.set('n', 'ff', builtin.live_grep, {})
+vim.keymap.set('n', 'ff','<cmd>lua my_telescope.my_live_grep()<CR>', {noremap = true, silent = true})
+
+return M;
