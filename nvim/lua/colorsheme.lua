@@ -98,10 +98,18 @@ require('github-theme').setup({
       -- ...
     },
   },
-  palettes = {},
-  specs = {},
+  palettes = {
+  },
+  specs = {
+      github_dark = {
+          bg1 = "#24292E",
+          bg0 = bg1,
+          bg3 = bg1,
+      }
+  },
   groups = {},
 })
+require('github-theme').compile()
 
 -- setup must be called before loading
 vim.cmd('colorscheme github_dark')
