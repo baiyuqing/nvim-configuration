@@ -1,3 +1,5 @@
+module = {}
+
 require('telescope').setup{
     defaults = {
       -- Default configuration for telescope goes here:
@@ -19,6 +21,9 @@ require('telescope').setup{
       -- }
       -- Now the picker_config_key will be applied every time you call this
       -- builtin picker
+      lsp_references = {
+          show_line = false
+      }
     },
     extensions = {
       -- Your extension configuration goes here:
@@ -34,6 +39,7 @@ require('telescope').setup{
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {})
-vim.keymap.set('n', 'gr', builtin.lsp_references, {})
+vim.keymap.set('n', 'gr', builtin.lsp_references, {noremap = true, silent = true})
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, {})
 vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, {})
+vim.keymap.set('n', 'ff', builtin.live_grep, {})

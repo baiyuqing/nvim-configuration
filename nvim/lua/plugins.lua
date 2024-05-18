@@ -40,7 +40,7 @@ return require('packer').startup(function(use)
         -- NOTE: PUT YOUR THIRD PLUGIN HERE --
         ---------------------------------------
         use 'tanvirtin/monokai.nvim'
-        --use { 'neovim/nvim-lspconfig' }
+        use { 'neovim/nvim-lspconfig' }
         use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
         use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
         use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' } -- buffer auto-completion
@@ -50,12 +50,6 @@ return require('packer').startup(function(use)
         use 'saadparwaiz1/cmp_luasnip'
         use { 'williamboman/mason.nvim' }
         use { 'williamboman/mason-lspconfig.nvim'}
-        use {
-            'nvim-telescope/telescope.nvim', tag = '0.1.6',
-          -- or                            , branch = '0.1.x',
-            requires = { {'nvim-lua/plenary.nvim'} }
-          }
-
         use {'nvim-treesitter/nvim-treesitter'}
         use {
             'nvim-tree/nvim-tree.lua',
@@ -97,10 +91,35 @@ return require('packer').startup(function(use)
         -- optional for icon support
         requires = { "nvim-tree/nvim-web-devicons" }
     }
+
     use {"akinsho/toggleterm.nvim", tag = '*', config = function()
             require("toggleterm").setup()
         end
     }
+
+    use {
+        "nvim-telescope/telescope.nvim", tag = '0.1.6',
+        requires = {
+          {'nvim-lua/plenary.nvim'}
+        },
+      }
+
+-- Install without configuration
+use ({ 'projekt0n/github-nvim-theme' })
+
+-- Or with configuration
+use({
+  'projekt0n/github-nvim-theme',
+  config = function()
+    require('github-theme').setup({
+      -- ...
+    })
+
+    vim.cmd('colorscheme github_dark')
+  end
+})
+
+
 
         -- Automatically set up your configuration after cloning packer.nvim
         -- Put this at the end after all plugins

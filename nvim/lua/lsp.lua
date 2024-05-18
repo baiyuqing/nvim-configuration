@@ -61,7 +61,6 @@ lspconfig.pylsp.setup({
 local util = require "lspconfig/util"
 require'lspconfig'.gopls.setup{
     on_attach = on_attach,
-    cmd = {'/Users/baiyuqing/.gvm/pkgsets/go1.22.3/global/bin/gopls', 'serve'},
     root_dir = util.root_pattern("go.work", "go.mod", ".git")
 
 }
