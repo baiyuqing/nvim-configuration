@@ -6,11 +6,6 @@ require('bai')
 require('lsp')
 require('my_telescope')
 
--- 启用自动缩进
-vim.o.autoindent = true
--- 设置缩进单位为 4 个空格
-vim.o.shiftwidth = 4
-
 -- 配置 nvim-treesitter
 require'nvim-treesitter.configs'.setup {
     -- A list of parser names, or "all" (the five listed parsers should always be installed)
