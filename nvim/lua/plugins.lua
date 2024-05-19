@@ -92,7 +92,9 @@ return require('packer').startup(function(use)
         requires = { "nvim-tree/nvim-web-devicons" }
     }
 
-    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+    use {
+        "akinsho/toggleterm.nvim", tag = '*',
+        config = function()
             require("toggleterm").setup()
         end
     }
@@ -102,28 +104,63 @@ return require('packer').startup(function(use)
         requires = {
           {'nvim-lua/plenary.nvim'}
         },
-      }
+    }
 
--- Install without configuration
-use ({ 'projekt0n/github-nvim-theme' })
+    -- Install without configuration
+    use ({ 'projekt0n/github-nvim-theme' })
 
--- Or with configuration
-use({
-  'projekt0n/github-nvim-theme',
-  config = function()
-    require('github-theme').setup({
-      -- ...
+    -- Or with configuration
+    use({
+        'projekt0n/github-nvim-theme',
+        config = function()
+            require('github-theme').setup({
+                -- ...
+            })
+
+            vim.cmd('colorscheme github_dark')
+        end
     })
 
-    vim.cmd('colorscheme github_dark')
-  end
-})
 
-
-
-        -- Automatically set up your configuration after cloning packer.nvim
-        -- Put this at the end after all plugins
-        if packer_bootstrap then
-            require('packer').sync()
+    use {
+        "lukas-reineke/indent-blankline.nvim",
+        config = function() require("ibl").setup(
+            {
+                scope = {
+                    show_start = false,
+                    show_end = false,
+                }
+            }
+        )
         end
-    end)
+    }
+
+    use {
+        "lewis6991/gitsigns.nvim",
+        config = function () require("gitsigns").setup()
+        end
+    }
+
+    use {"nvim-lua/plenary.nvim"}
+
+    use {
+        'pwntester/octo.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim',
+            -- OR 'ibhagwan/fzf-lua',
+            'nvim-tree/nvim-web-devicons',
+        },
+        config = function ()
+            require"octo".setup()
+        end
+    }
+
+    use { 'folke/tokyonight.nvim' }
+
+    -- Automatically set up your configuration after cloning packer.nvim
+    -- Put this at the end after all plugins
+    if packer_bootstrap then
+        require('packer').sync()
+    end
+end)

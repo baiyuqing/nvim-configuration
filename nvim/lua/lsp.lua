@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright' },
+    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright'},
 })
 
 
@@ -76,7 +76,8 @@ require'lspconfig'.tsserver.setup{
 require'lspconfig'.azure_pipelines_ls.setup{
     on_attach = on_attach
 }
-
 require'lspconfig'.clangd.setup{
     on_attach = on_attach
+}
+require'lspconfig'.lua_ls.setup{
 }
