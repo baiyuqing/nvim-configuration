@@ -32,3 +32,4 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 
 vim.keymap.set('n', '<C-,>', '<Cmd>NvimTreeOpen<CR>')
+vim.keymap.set('n', '<C-.>', '<Cmd>NvimTreeClose<CR>')
