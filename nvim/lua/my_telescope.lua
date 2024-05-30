@@ -31,7 +31,10 @@ require('telescope').setup{
         },
         lsp_implementations = {
             show_line = false
-        }
+        },
+        lsp_definitions = {
+            show_line = false
+        },
     },
     extensions = {
     }

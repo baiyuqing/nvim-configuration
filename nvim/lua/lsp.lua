@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright'},
+    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'yamlls', 'bashls'},
 })
 
 
@@ -80,4 +80,11 @@ require'lspconfig'.clangd.setup{
     on_attach = on_attach
 }
 require'lspconfig'.lua_ls.setup{
+}
+
+require('lspconfig')['yamlls'].setup {
+  on_attach = on_attach,
+}
+require('lspconfig')['bashls'].setup {
+    on_attach = on_attach,
 }
