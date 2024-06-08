@@ -87,7 +87,6 @@ return require('packer').startup(function(use)
 
 
     use {'fatih/vim-go'}
-    use {"stevearc/aerial.nvim"}
 
     use {'rust-lang/rust.vim'}
     use {'sindrets/diffview.nvim'}
@@ -164,6 +163,7 @@ return require('packer').startup(function(use)
 
     use { 'folke/tokyonight.nvim' }
     use {"rebelot/kanagawa.nvim" }
+    use {"marko-cerovac/material.nvim"}
     use {
         'nvim-treesitter/nvim-treesitter-context',
         config = function() require('treesitter-context').setup({
@@ -243,8 +243,13 @@ return require('packer').startup(function(use)
         })
         end
     }
-
-
+    use {"ray-x/aurora"}
+    use {"Mofiqul/dracula.nvim"}
+    use {'mistricky/codesnap.nvim', run = 'make'}
+    -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
+    use {'nvim-tree/nvim-web-devicons'} -- OPTIONAL: for file icons
+    use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
+    use {'romgrk/barbar.nvim'}
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then

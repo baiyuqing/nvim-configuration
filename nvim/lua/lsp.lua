@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'yamlls', 'bashls'},
+    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'yamlls', 'bashls', 'bufls'},
 })
 
 
@@ -68,7 +68,14 @@ require'lspconfig'.rust_analyzer.setup{
     on_attach = on_attach
 }
 require'lspconfig'.pyright.setup{
-    on_attach = on_attach
+    on_attach = on_attach,
+    init_options = {
+        settings = {
+            args = {
+                "--ignore=E501"
+            },
+        },
+    },
 }
 require'lspconfig'.tsserver.setup{
     on_attach = on_attach
@@ -87,4 +94,7 @@ require('lspconfig')['yamlls'].setup {
 }
 require('lspconfig')['bashls'].setup {
     on_attach = on_attach,
+}
+require('lspconfig')['bufls'].setup{
+    on_attach = on_attach
 }
