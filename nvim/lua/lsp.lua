@@ -98,3 +98,9 @@ require('lspconfig')['bashls'].setup {
 require('lspconfig')['bufls'].setup{
     on_attach = on_attach
 }
+
+vim.lsp.handlers["textDocument/diagnostic"] = vim.lsp.with(
+  vim.lsp.diagnostic.on_diagnostic, {
+    underline = false,
+  }
+)

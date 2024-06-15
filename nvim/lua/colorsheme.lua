@@ -22,8 +22,8 @@ require("catppuccin").setup({
         percentage = 0.15, -- percentage of the shade to apply to the inactive window
     },
     no_italic = false, -- Force no italic
-    no_bold = false, -- Force no bold
-    no_underline = false, -- Force no underline
+    no_bold = true, -- Force no bold
+    no_underline = true, -- Force no underline
     styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
@@ -114,7 +114,7 @@ require('github-theme').compile()
 require("tokyonight").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
-  style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+  style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
   light_style = "day", -- The theme is used when the background is set to light
   transparent = false, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
@@ -252,5 +252,51 @@ require('material').setup({
     custom_highlights = {}, -- Overwrite highlights with your own
 })
 
+require 'nordic' .setup {
+    -- This callback can be used to override the colors used in the palette.
+    on_palette = function(palette) return palette end,
+    -- Enable bold keywords.
+    bold_keywords = false,
+    -- Enable italic comments.
+    italic_comments = true,
+    -- Enable general editor background transparency.
+    transparent_bg = false,
+    -- Enable brighter float border.
+    bright_border = false,
+    -- Reduce the overall amount of blue in the theme (diverges from base Nord).
+    reduced_blue = true,
+    -- Swap the dark background with the normal one.
+    swap_backgrounds = false,
+    -- Override the styling of any highlight group.
+    override = {},
+    -- Cursorline options.  Also includes visual/selection.
+    cursorline = {
+        -- Bold font in cursorline.
+        bold = false,
+        -- Bold cursorline number.
+        bold_number = true,
+        -- Available styles: 'dark', 'light'.
+        theme = 'dark',
+        -- Blending the cursorline bg with the buffer bg.
+        blend = 0.85,
+    },
+    noice = {
+        -- Available styles: `classic`, `flat`.
+        style = 'classic',
+    },
+    telescope = {
+        -- Available styles: `classic`, `flat`.
+        style = 'flat',
+    },
+    leap = {
+        -- Dims the backdrop when using leap.
+        dim_backdrop = false,
+    },
+    ts_context = {
+        -- Enables dark background for treesitter-context window
+        dark_background = true,
+    }
+}
+
 -- setup must be called before loading
-vim.cmd.colorscheme("tokyonight-night")
+vim.cmd.colorscheme("default")
