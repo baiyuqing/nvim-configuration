@@ -110,6 +110,8 @@ return require('packer').startup(function(use)
         },
     }
 
+    use {"smartpde/telescope-recent-files"}
+
     -- Or with configuration
     use({
         'projekt0n/github-nvim-theme',

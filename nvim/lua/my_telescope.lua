@@ -37,6 +37,7 @@ require('telescope').setup{
         },
     },
     extensions = {
+        recent_files = {},
     }
 }
 
@@ -63,5 +64,6 @@ vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, {})
 -- vim.keymap.set('n', 'ff', builtin.live_grep, {})
 vim.keymap.set('n', 'ff','<cmd>lua my_telescope.my_live_grep()<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', 'fd','<cmd>lua my_telescope.my_find_file()<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', 'fo', builtin.oldfiles, {})
 
 return M;
