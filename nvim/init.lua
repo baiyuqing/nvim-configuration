@@ -143,7 +143,7 @@ require("codesnap").setup({
     watermark = "",
     code_font_family = "MonoLisa Nerd Font",
     has_breadcrumbs = true,
-     bg_color = "#535c68",
+     bg_color = "#04274A",
   breadcrumbs_separator = "/"
 })
 
@@ -314,6 +314,10 @@ require("fidget").setup(
         string.format("%s/fidget.nvim.log", vim.fn.stdpath("cache")),
     },
 })
+
+
+require("neogit").setup()
+
 
 --#region
 vim.opt.mouse = "a"

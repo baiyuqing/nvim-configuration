@@ -40,7 +40,15 @@ require("catppuccin").setup({
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
     color_overrides = {},
-    custom_highlights = {},
+    highlight_overrides = {
+        mocha = function(mocha) 
+            return {
+                ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
+                ["@punctuation.bracket"] = { fg = "#f2f0eb" },
+                ["@punctuation.special"] = { fg = "#f2f0eb" },
+            }
+        end,
+    },
     default_integrations = true,
     integrations = {
         cmp = true,
@@ -176,7 +184,6 @@ require('kanagawa').setup({
 require("dracula").setup()
 
 require('material').setup({
-
     contrast = {
         terminal = false, -- Enable contrast for the built-in terminal
         sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
@@ -299,4 +306,4 @@ require 'nordic' .setup {
 }
 
 -- setup must be called before loading
-vim.cmd.colorscheme("tokyonight")
+vim.cmd.colorscheme("catppuccin-mocha")

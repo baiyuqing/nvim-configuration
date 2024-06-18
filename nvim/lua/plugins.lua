@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "nvim-telescope/telescope.nvim", tag = '0.1.6',
+        "nvim-telescope/telescope.nvim", tag = '0.1.8',
         requires = {
           {'nvim-lua/plenary.nvim'}
         },
@@ -259,6 +259,21 @@ return require('packer').startup(function(use)
     use { "hedyhli/outline.nvim" }
     use {'AlexvZyl/nordic.nvim'}
     use { "j-hui/fidget.nvim" }
+
+    use {
+        "NeogitOrg/neogit",
+        requires = {
+            "nvim-lua/plenary.nvim",         -- required
+            "sindrets/diffview.nvim",        -- optional - Diff integration
+
+            -- Only one of these is needed, not both.
+            "nvim-telescope/telescope.nvim", -- optional
+            "ibhagwan/fzf-lua",              -- optional
+        },
+    }
+
+
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if packer_bootstrap then
