@@ -141,7 +141,7 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
 --
 require("codesnap").setup({
     watermark = "",
-    code_font_family = "MonoLisa Nerd Font",
+    code_font_family = "JetBrainsMono NFM",
     has_breadcrumbs = true,
      bg_color = "#04274A",
   breadcrumbs_separator = "/"

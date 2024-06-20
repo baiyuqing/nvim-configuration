@@ -8,7 +8,7 @@ end
 
 
 require("catppuccin").setup({
-    flavour = "auto", -- latte, frappe, macchiato, mocha
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
     background = { -- :h background
         light = "latte",
         dark = "mocha",
@@ -19,7 +19,7 @@ require("catppuccin").setup({
     dim_inactive = {
         enabled = false, -- dims the background color of inactive window
         shade = "dark",
-        percentage = 0.15, -- percentage of the shade to apply to the inactive window
+        percentage = 0, -- percentage of the shade to apply to the inactive window
     },
     no_italic = false, -- Force no italic
     no_bold = true, -- Force no bold
@@ -39,13 +39,18 @@ require("catppuccin").setup({
         operators = {},
         -- miscs = {}, -- Uncomment to turn off hard-coded styles
     },
-    color_overrides = {},
+    color_overrides = {
+        mocha = {
+            base = "#1A1B26",
+        },
+    },
     highlight_overrides = {
-        mocha = function(mocha) 
+        mocha = function(mocha)
             return {
                 ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
                 ["@punctuation.bracket"] = { fg = "#f2f0eb" },
                 ["@punctuation.special"] = { fg = "#f2f0eb" },
+                Normal = {bg = mocha.base}
             }
         end,
     },
@@ -112,7 +117,12 @@ require('github-theme').setup({
           bg1 = "#1F2224",
           bg0 = bg1,
           bg3 = bg1,
-      }
+      },
+      github_dark_dimmed = {
+          bg1 = "#1e2021",
+          bg0 = bg1,
+          bg3 = bg1,
+      },
   },
   groups = {},
 })
@@ -304,6 +314,11 @@ require 'nordic' .setup {
         dark_background = true,
     }
 }
+require("onedarkpro").setup({
+    colors = {
+        dark = { bg = "#272927"},
+    }
+})
 
 -- setup must be called before loading
 vim.cmd.colorscheme("catppuccin-mocha")
