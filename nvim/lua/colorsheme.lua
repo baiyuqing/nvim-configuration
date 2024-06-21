@@ -22,7 +22,7 @@ require("catppuccin").setup({
         percentage = 0, -- percentage of the shade to apply to the inactive window
     },
     no_italic = false, -- Force no italic
-    no_bold = true, -- Force no bold
+    no_bold = false, -- Force no bold
     no_underline = true, -- Force no underline
     styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
         comments = { "italic" }, -- Change the style of comments
@@ -45,12 +45,12 @@ require("catppuccin").setup({
         },
     },
     highlight_overrides = {
-        mocha = function(mocha)
+        mocha = function()
             return {
                 ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
                 ["@punctuation.bracket"] = { fg = "#f2f0eb" },
                 ["@punctuation.special"] = { fg = "#f2f0eb" },
-                Normal = {bg = mocha.base}
+                background = { bg = "#1A1B26" }
             }
         end,
     },
@@ -141,14 +141,14 @@ require("tokyonight").setup({
     -- Value is any valid attr-list value for `:help nvim_set_hl`
     comments = { italic = true },
     keywords = { italic = false },
-    functions = {},
+    functions = { bold = true },
     variables = {},
     -- Background styles. Can be "dark", "transparent" or "normal"
     sidebars = "dark", -- style for sidebars, see below
     floats = "dark", -- style for floating windows
   },
   sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-  day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+  day_brightness = 0, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
   hide_inactive_statusline = true, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
   dim_inactive = false, -- dims inactive windows
   lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
@@ -320,5 +320,32 @@ require("onedarkpro").setup({
     }
 })
 
+-- Default options:
+require("gruvbox").setup({
+  terminal_colors = true, -- add neovim terminal colors
+  undercurl = true,
+  underline = true,
+  bold = true,
+  italic = {
+    strings = true,
+    emphasis = true,
+    comments = true,
+    operators = false,
+    folds = true,
+  },
+  strikethrough = true,
+  invert_selection = false,
+  invert_signs = false,
+  invert_tabline = false,
+  invert_intend_guides = false,
+  inverse = true, -- invert background for search, diffs, statuslines and errors
+  contrast = "", -- can be "hard", "soft" or empty string
+  palette_overrides = {},
+  overrides = {},
+  dim_inactive = false,
+  transparent_mode = false,
+})
+
+
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin-mocha")
+vim.cmd.colorscheme("gruvbox")

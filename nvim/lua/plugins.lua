@@ -274,7 +274,7 @@ return require('packer').startup(function(use)
 
     use {"olimorris/onedarkpro.nvim"}
 
-
+    use { "ellisonleao/gruvbox.nvim" }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
