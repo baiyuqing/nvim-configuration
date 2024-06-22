@@ -250,7 +250,6 @@ return require('packer').startup(function(use)
     use {'mistricky/codesnap.nvim', run = 'make'}
     -- These optional plugins should be loaded directly because of a bug in Packer lazy loading
     use {'nvim-tree/nvim-web-devicons'} -- OPTIONAL: for file icons
-    use {'lewis6991/gitsigns.nvim'} -- OPTIONAL: for git status
     use {
         'nvim-lualine/lualine.nvim',
         requires = { 'nvim-tree/nvim-web-devicons', opt = true }
@@ -275,6 +274,8 @@ return require('packer').startup(function(use)
     use {"olimorris/onedarkpro.nvim"}
 
     use { "ellisonleao/gruvbox.nvim" }
+
+    use {'f-person/auto-dark-mode.nvim'}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

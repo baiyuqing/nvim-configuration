@@ -324,7 +324,7 @@ require("onedarkpro").setup({
 require("gruvbox").setup({
   terminal_colors = true, -- add neovim terminal colors
   undercurl = true,
-  underline = true,
+  underline = false,
   bold = true,
   italic = {
     strings = true,
@@ -347,5 +347,16 @@ require("gruvbox").setup({
 })
 
 
--- setup must be called before loading
-vim.cmd.colorscheme("gruvbox")
+require("auto-dark-mode").setup({
+    opts = {
+        update_interval = 1000,
+        set_dark_mode = function()
+            vim.cmd.colorscheme("gruvbox")
+        end,
+        set_light_mode = function()
+            vim.cmd.colorscheme("tokyonight-day")
+        end,
+    }
+})
+
+vim.cmd.colorscheme("tokyonight")
