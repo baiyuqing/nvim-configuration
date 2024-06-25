@@ -28,7 +28,7 @@ require("catppuccin").setup({
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
         loops = {},
-        functions = {},
+        functions = { "bold" },
         keywords = {},
         strings = {},
         variables = {},
@@ -50,7 +50,8 @@ require("catppuccin").setup({
                 ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
                 ["@punctuation.bracket"] = { fg = "#f2f0eb" },
                 ["@punctuation.special"] = { fg = "#f2f0eb" },
-                background = { bg = "#1A1B26" }
+                ["@string"] = { fg = "#f76dd5" },
+                -- background = { bg = "#1A1B26" }
             }
         end,
     },
@@ -114,7 +115,8 @@ require('github-theme').setup({
   },
   specs = {
       github_dark = {
-          bg1 = "#1F2224",
+          --bg1 = "#1F2224",
+          bg1 = "#1d0d1e",
           bg0 = bg1,
           bg3 = bg1,
       },
@@ -168,7 +170,8 @@ require("tokyonight").setup({
 -- Default options:
 require('kanagawa').setup({
     compile = false,             -- enable compiling the colorscheme
-    undercurl = true,            -- enable undercurls
+    undercurl = false,            -- enable undercurls
+    underline = false,
     commentStyle = { italic = true },
     functionStyle = {},
     keywordStyle = { italic = false},
@@ -285,7 +288,9 @@ require 'nordic' .setup {
     -- Swap the dark background with the normal one.
     swap_backgrounds = false,
     -- Override the styling of any highlight group.
-    override = {},
+    override = {
+        ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
+    },
     -- Cursorline options.  Also includes visual/selection.
     cursorline = {
         -- Bold font in cursorline.
@@ -323,7 +328,7 @@ require("onedarkpro").setup({
 -- Default options:
 require("gruvbox").setup({
   terminal_colors = true, -- add neovim terminal colors
-  undercurl = true,
+  undercurl = false,
   underline = false,
   bold = true,
   italic = {
@@ -347,16 +352,16 @@ require("gruvbox").setup({
 })
 
 
-require("auto-dark-mode").setup({
-    opts = {
-        update_interval = 1000,
-        set_dark_mode = function()
-            vim.cmd.colorscheme("gruvbox")
-        end,
-        set_light_mode = function()
-            vim.cmd.colorscheme("tokyonight-day")
-        end,
-    }
+local auto_dark_mode = require('auto-dark-mode')
+
+auto_dark_mode.setup({
+	update_interval = 100000,
+	set_dark_mode = function()
+		vim.cmd('colorscheme catppuccin-mocha')
+	end,
+	set_light_mode = function()
+		vim.cmd('colorscheme catppuccin-mocha')
+		--vim.cmd('colorscheme tokyonight-day')
+	end,
 })
 
-vim.cmd.colorscheme("tokyonight")

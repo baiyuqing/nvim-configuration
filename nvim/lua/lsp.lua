@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'yamlls', 'bashls', 'bufls'},
+    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'bashls', 'bufls', 'glslls'},
 })
 
 
@@ -56,7 +56,17 @@ end
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
 lspconfig.pylsp.setup({
-	on_attach = on_attach,
+    on_attach = on_attach,
+    settings = {
+        pylsp = {
+            plugins = {
+                pycodestyle = {
+                    ignore = {'W391', 'W503', 'E303', 'E301', 'E302', 'W291', 'W293'},
+                    maxLineLength = 120
+                }
+            }
+        }
+    }
 })
 local util = require "lspconfig/util"
 require'lspconfig'.gopls.setup{
@@ -89,13 +99,18 @@ require'lspconfig'.clangd.setup{
 require'lspconfig'.lua_ls.setup{
 }
 
+--[[
 require('lspconfig')['yamlls'].setup {
   on_attach = on_attach,
 }
+--]]
 require('lspconfig')['bashls'].setup {
     on_attach = on_attach,
 }
 require('lspconfig')['bufls'].setup{
+    on_attach = on_attach
+}
+require('lspconfig')['glslls'].setup{
     on_attach = on_attach
 }
 

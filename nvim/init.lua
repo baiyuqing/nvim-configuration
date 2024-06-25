@@ -322,3 +322,10 @@ require("neogit").setup()
 --#region
 vim.opt.mouse = "a"
 vim.opt.cursorline = false
+
+if vim.g.vscode then
+    -- VSCode extension
+else
+    -- ordinary Neovim
+end
+

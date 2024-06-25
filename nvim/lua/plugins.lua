@@ -123,7 +123,7 @@ return require('packer').startup(function(use)
         end
     })
 
-
+--[[
     use {
         "lukas-reineke/indent-blankline.nvim",
         config = function() require("ibl").setup(
@@ -136,6 +136,7 @@ return require('packer').startup(function(use)
         )
         end
     }
+]]--
 
     use {
         "lewis6991/gitsigns.nvim",
@@ -276,6 +277,7 @@ return require('packer').startup(function(use)
     use { "ellisonleao/gruvbox.nvim" }
 
     use {'f-person/auto-dark-mode.nvim'}
+    use {"NLKNguyen/papercolor-theme"}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
