@@ -316,9 +316,6 @@ require("fidget").setup(
 })
 
 
-require("neogit").setup()
-
-
 --#region
 vim.opt.mouse = "a"
 vim.opt.cursorline = false

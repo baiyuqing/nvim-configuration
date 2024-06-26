@@ -79,11 +79,6 @@ return require('packer').startup(function(use)
               'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
           }
       }
-      use {
-          'tzachar/cmp-tabnine',
-          run = './install.sh',
-          requires = 'hrsh7th/nvim-cmp'
-      }
 
 
     use {'fatih/vim-go'}
@@ -259,18 +254,6 @@ return require('packer').startup(function(use)
     use { "hedyhli/outline.nvim" }
     use {'AlexvZyl/nordic.nvim'}
     use { "j-hui/fidget.nvim" }
-
-    use {
-        "NeogitOrg/neogit",
-        requires = {
-            "nvim-lua/plenary.nvim",         -- required
-            "sindrets/diffview.nvim",        -- optional - Diff integration
-
-            -- Only one of these is needed, not both.
-            "nvim-telescope/telescope.nvim", -- optional
-            "ibhagwan/fzf-lua",              -- optional
-        },
-    }
 
     use {"olimorris/onedarkpro.nvim"}
 
