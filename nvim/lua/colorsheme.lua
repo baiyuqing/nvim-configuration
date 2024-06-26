@@ -84,7 +84,7 @@ require('github-theme').setup({
     dim_inactive = false,      -- Non focused panes set to alternative background
     module_default = true,     -- Default enable value for modules
     styles = {                 -- Style to be applied to different syntax groups
-      comments = 'NONE',       -- Value is any valid attr-list value `:help attr-list`
+      comments = 'italic',       -- Value is any valid attr-list value `:help attr-list`
       functions = 'NONE',
       keywords = 'NONE',
       variables = 'NONE',
@@ -124,6 +124,9 @@ require('github-theme').setup({
           bg1 = "#1e2021",
           bg0 = bg1,
           bg3 = bg1,
+      },
+      github_light_colorblind = {
+          ["@string"] = { fg = "#f76dd5" },
       },
   },
   groups = {},
@@ -351,16 +354,93 @@ require("gruvbox").setup({
   transparent_mode = false,
 })
 
+-- Lua
+require('onedark').setup  {
+    -- Main options --
+    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = false,  -- Show/hide background
+    term_colors = true, -- Change terminal color as per the selected theme style
+    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+    cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+
+    -- toggle theme style ---
+    toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
+    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+
+    -- Change code style ---
+    -- Options are italic, bold, underline, none
+    -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
+    code_style = {
+        comments = 'italic',
+        keywords = 'none',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none'
+    },
+
+    -- Lualine options --
+    lualine = {
+        transparent = false, -- lualine center bar transparency
+    },
+
+    -- Custom Highlights --
+    colors = {}, -- Override default colors
+    highlights = {}, -- Override highlight groups
+
+    -- Plugins Config --
+    diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = false,   -- use undercurl instead of underline for diagnostics
+        background = true,    -- use background color for virtual text
+    },
+}
+
+
+
+local c = require('vscode.colors').get_colors()
+require('vscode').setup({
+    -- Alternatively set style in setup
+    -- style = 'light'
+
+    -- Enable transparent background
+    transparent = false,
+
+    -- Enable italic comment
+    italic_comments = true,
+
+    -- Underline `@markup.link.*` variants
+    underline_links = false,
+
+    -- Disable nvim-tree background color
+    disable_nvimtree_bg = true,
+
+    -- Override colors (see ./lua/vscode/colors.lua)
+    color_overrides = {
+        vscLineNumber = '#6F42C1',
+    },
+
+    -- Override highlight groups (see ./lua/vscode/theme.lua)
+    group_overrides = {
+        -- this supports the same val table as vim.api.nvim_set_hl
+        -- use colors from this colorscheme by requiring vscode.colors!
+        Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
+    }
+})
+-- require('vscode').load()
+
+
 
 local auto_dark_mode = require('auto-dark-mode')
 
 auto_dark_mode.setup({
-	update_interval = 100000,
+	update_interval = 1000,
 	set_dark_mode = function()
-		vim.cmd('colorscheme catppuccin-mocha')
+        vim.api.nvim_set_option("background", "dark")
+		vim.cmd('colorscheme vscode')
 	end,
 	set_light_mode = function()
-		vim.cmd('colorscheme catppuccin-mocha')
+        vim.api.nvim_set_option("background", "light")
+		vim.cmd('colorscheme vscode')
 		--vim.cmd('colorscheme tokyonight-day')
 	end,
 })
