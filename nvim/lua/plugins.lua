@@ -263,6 +263,7 @@ return require('packer').startup(function(use)
     use {"NLKNguyen/papercolor-theme"}
     use {"navarasu/onedark.nvim"}
     use {'Mofiqul/vscode.nvim'}
+    use {"rose-pine/neovim"}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

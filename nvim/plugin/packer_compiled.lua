@@ -203,13 +203,18 @@ _G.packer_plugins = {
     path = "/Users/baiyuqing/.local/share/nvim/site/pack/packer/start/monokai.nvim",
     url = "https://github.com/tanvirtin/monokai.nvim"
   },
+  neovim = {
+    loaded = true,
+    path = "/Users/baiyuqing/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["nordic.nvim"] = {
     loaded = true,
     path = "/Users/baiyuqing/.local/share/nvim/site/pack/packer/start/nordic.nvim",
     url = "https://github.com/AlexvZyl/nordic.nvim"
   },
   ["nvim-cmp"] = {
-    after = { "cmp-buffer", "cmp-nvim-lsp", "cmp-path", "cmp-cmdline" },
+    after = { "cmp-buffer", "cmp-cmdline", "cmp-path", "cmp-nvim-lsp" },
     config = { "require('config.nvim-cmp')" },
     loaded = true,
     only_config = true,
@@ -232,7 +237,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-treesitter-context"] = {
-    config = { "\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\t\tmode\vcursor\14max_lines\3\0\14on_attach\0\15trim_scope\nouter\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\venable\1\vzindex\3\20\nsetup\23treesitter-context\frequire\0" },
+    config = { "\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\t\14max_lines\3\0\venable\1\14on_attach\0\vzindex\3\20\15trim_scope\nouter\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\tmode\vcursor\nsetup\23treesitter-context\frequire\0" },
     loaded = true,
     path = "/Users/baiyuqing/.local/share/nvim/site/pack/packer/start/nvim-treesitter-context",
     url = "https://github.com/nvim-treesitter/nvim-treesitter-context"
@@ -294,7 +299,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["todo-comments.nvim"] = {
-    config = { "\27LJ\2\n�\n\0\0\a\0001\00096\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2/\0005\3\3\0005\4\a\0005\5\4\0005\6\5\0=\6\6\5=\5\b\0045\5\t\0=\5\n\0045\5\v\0=\5\f\0045\5\r\0005\6\14\0=\6\6\5=\5\15\0045\5\16\0005\6\17\0=\6\6\5=\5\18\0045\5\19\0005\6\20\0=\6\6\5=\5\21\0045\5\22\0005\6\23\0=\6\6\5=\5\24\4=\4\25\0035\4\27\0005\5\26\0=\5\28\0045\5\29\0=\5\30\0045\5\31\0=\5 \0045\5!\0=\5\"\0045\5#\0=\5$\0045\5%\0=\5&\4=\4'\0035\4(\0004\5\0\0=\5)\4=\4*\0035\4+\0005\5,\0=\5-\4=\4.\3=\0030\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\vsearch\targs\1\6\0\0\18--color=never\17--no-heading\20--with-filename\18--line-number\r--column\1\0\3\targs\0\fpattern\18\\b(KEYWORDS):\fcommand\arg\14highlight\fexclude\1\0\n\14multiline\2\nafter\afg\fpattern\22.*<(KEYWORDS)\\s*:\fexclude\0\17max_line_len\3�\3\18comments_only\2\fkeyword\twide\vbefore\5\22multiline_context\3\n\22multiline_pattern\a^.\vcolors\ttest\1\3\0\0\15Identifier\f#FF00FF\fdefault\1\3\0\0\15Identifier\f#7C3AED\thint\1\3\0\0\19DiagnosticHint\f#10B981\tinfo\1\3\0\0\19DiagnosticInfo\f#2563EB\fwarning\1\4\0\0\19DiagnosticWarn\15WarningMsg\f#FBBF24\nerror\1\0\6\fwarning\0\nerror\0\tinfo\0\fdefault\0\thint\0\ttest\0\1\4\0\0\20DiagnosticError\rErrorMsg\f#DC2626\rkeywords\tTEST\1\4\0\0\fTESTING\vPASSED\vFAILED\1\0\3\ticon\t⏲ \balt\0\ncolor\ttest\tNOTE\1\2\0\0\tINFO\1\0\3\ticon\t \balt\0\ncolor\thint\tPERF\1\4\0\0\nOPTIM\16PERFORMANCE\rOPTIMIZE\1\0\2\ticon\t \balt\0\tWARN\1\3\0\0\fWARNING\bXXX\1\0\3\ticon\t \balt\0\ncolor\fwarning\tHACK\1\0\2\ticon\t \ncolor\fwarning\tTODO\1\0\2\ticon\t \ncolor\tinfo\bFIX\1\0\a\tTODO\0\tPERF\0\tHACK\0\tTEST\0\tWARN\0\bFIX\0\tNOTE\0\balt\1\5\0\0\nFIXME\bBUG\nFIXIT\nISSUE\1\0\3\ticon\t \balt\0\ncolor\nerror\1\0\6\nsigns\2\14highlight\0\vsearch\0\vcolors\0\rkeywords\0\18sign_priority\3\b\nsetup\18todo-comments\frequire\0" },
+    config = { "\27LJ\2\n�\n\0\0\a\0001\00096\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2/\0005\3\3\0005\4\a\0005\5\4\0005\6\5\0=\6\6\5=\5\b\0045\5\t\0=\5\n\0045\5\v\0=\5\f\0045\5\r\0005\6\14\0=\6\6\5=\5\15\0045\5\16\0005\6\17\0=\6\6\5=\5\18\0045\5\19\0005\6\20\0=\6\6\5=\5\21\0045\5\22\0005\6\23\0=\6\6\5=\5\24\4=\4\25\0035\4\27\0005\5\26\0=\5\28\0045\5\29\0=\5\30\0045\5\31\0=\5 \0045\5!\0=\5\"\0045\5#\0=\5$\0045\5%\0=\5&\4=\4'\0035\4(\0004\5\0\0=\5)\4=\4*\0035\4+\0005\5,\0=\5-\4=\4.\3=\0030\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\vsearch\targs\1\6\0\0\18--color=never\17--no-heading\20--with-filename\18--line-number\r--column\1\0\3\fpattern\18\\b(KEYWORDS):\targs\0\fcommand\arg\14highlight\fexclude\1\0\n\22multiline_pattern\a^.\fpattern\22.*<(KEYWORDS)\\s*:\14multiline\2\nafter\afg\fexclude\0\17max_line_len\3�\3\18comments_only\2\fkeyword\twide\vbefore\5\22multiline_context\3\n\vcolors\ttest\1\3\0\0\15Identifier\f#FF00FF\fdefault\1\3\0\0\15Identifier\f#7C3AED\thint\1\3\0\0\19DiagnosticHint\f#10B981\tinfo\1\3\0\0\19DiagnosticInfo\f#2563EB\fwarning\1\4\0\0\19DiagnosticWarn\15WarningMsg\f#FBBF24\nerror\1\0\6\fwarning\0\nerror\0\tinfo\0\fdefault\0\ttest\0\thint\0\1\4\0\0\20DiagnosticError\rErrorMsg\f#DC2626\rkeywords\tTEST\1\4\0\0\fTESTING\vPASSED\vFAILED\1\0\3\ticon\t⏲ \balt\0\ncolor\ttest\tNOTE\1\2\0\0\tINFO\1\0\3\ticon\t \balt\0\ncolor\thint\tPERF\1\4\0\0\nOPTIM\16PERFORMANCE\rOPTIMIZE\1\0\2\ticon\t \balt\0\tWARN\1\3\0\0\fWARNING\bXXX\1\0\3\ticon\t \balt\0\ncolor\fwarning\tHACK\1\0\2\ticon\t \ncolor\fwarning\tTODO\1\0\2\ticon\t \ncolor\tinfo\bFIX\1\0\a\tHACK\0\tPERF\0\tWARN\0\tTEST\0\tTODO\0\bFIX\0\tNOTE\0\balt\1\5\0\0\nFIXME\bBUG\nFIXIT\nISSUE\1\0\3\ticon\t \balt\0\ncolor\nerror\1\0\6\nsigns\2\14highlight\0\vcolors\0\vsearch\0\rkeywords\0\18sign_priority\3\b\nsetup\18todo-comments\frequire\0" },
     loaded = true,
     path = "/Users/baiyuqing/.local/share/nvim/site/pack/packer/start/todo-comments.nvim",
     url = "https://github.com/folke/todo-comments.nvim"
@@ -325,28 +330,28 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: todo-comments.nvim
 time([[Config for todo-comments.nvim]], true)
-try_loadstring("\27LJ\2\n�\n\0\0\a\0001\00096\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2/\0005\3\3\0005\4\a\0005\5\4\0005\6\5\0=\6\6\5=\5\b\0045\5\t\0=\5\n\0045\5\v\0=\5\f\0045\5\r\0005\6\14\0=\6\6\5=\5\15\0045\5\16\0005\6\17\0=\6\6\5=\5\18\0045\5\19\0005\6\20\0=\6\6\5=\5\21\0045\5\22\0005\6\23\0=\6\6\5=\5\24\4=\4\25\0035\4\27\0005\5\26\0=\5\28\0045\5\29\0=\5\30\0045\5\31\0=\5 \0045\5!\0=\5\"\0045\5#\0=\5$\0045\5%\0=\5&\4=\4'\0035\4(\0004\5\0\0=\5)\4=\4*\0035\4+\0005\5,\0=\5-\4=\4.\3=\0030\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\vsearch\targs\1\6\0\0\18--color=never\17--no-heading\20--with-filename\18--line-number\r--column\1\0\3\targs\0\fpattern\18\\b(KEYWORDS):\fcommand\arg\14highlight\fexclude\1\0\n\14multiline\2\nafter\afg\fpattern\22.*<(KEYWORDS)\\s*:\fexclude\0\17max_line_len\3�\3\18comments_only\2\fkeyword\twide\vbefore\5\22multiline_context\3\n\22multiline_pattern\a^.\vcolors\ttest\1\3\0\0\15Identifier\f#FF00FF\fdefault\1\3\0\0\15Identifier\f#7C3AED\thint\1\3\0\0\19DiagnosticHint\f#10B981\tinfo\1\3\0\0\19DiagnosticInfo\f#2563EB\fwarning\1\4\0\0\19DiagnosticWarn\15WarningMsg\f#FBBF24\nerror\1\0\6\fwarning\0\nerror\0\tinfo\0\fdefault\0\thint\0\ttest\0\1\4\0\0\20DiagnosticError\rErrorMsg\f#DC2626\rkeywords\tTEST\1\4\0\0\fTESTING\vPASSED\vFAILED\1\0\3\ticon\t⏲ \balt\0\ncolor\ttest\tNOTE\1\2\0\0\tINFO\1\0\3\ticon\t \balt\0\ncolor\thint\tPERF\1\4\0\0\nOPTIM\16PERFORMANCE\rOPTIMIZE\1\0\2\ticon\t \balt\0\tWARN\1\3\0\0\fWARNING\bXXX\1\0\3\ticon\t \balt\0\ncolor\fwarning\tHACK\1\0\2\ticon\t \ncolor\fwarning\tTODO\1\0\2\ticon\t \ncolor\tinfo\bFIX\1\0\a\tTODO\0\tPERF\0\tHACK\0\tTEST\0\tWARN\0\bFIX\0\tNOTE\0\balt\1\5\0\0\nFIXME\bBUG\nFIXIT\nISSUE\1\0\3\ticon\t \balt\0\ncolor\nerror\1\0\6\nsigns\2\14highlight\0\vsearch\0\vcolors\0\rkeywords\0\18sign_priority\3\b\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
+try_loadstring("\27LJ\2\n�\n\0\0\a\0001\00096\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2/\0005\3\3\0005\4\a\0005\5\4\0005\6\5\0=\6\6\5=\5\b\0045\5\t\0=\5\n\0045\5\v\0=\5\f\0045\5\r\0005\6\14\0=\6\6\5=\5\15\0045\5\16\0005\6\17\0=\6\6\5=\5\18\0045\5\19\0005\6\20\0=\6\6\5=\5\21\0045\5\22\0005\6\23\0=\6\6\5=\5\24\4=\4\25\0035\4\27\0005\5\26\0=\5\28\0045\5\29\0=\5\30\0045\5\31\0=\5 \0045\5!\0=\5\"\0045\5#\0=\5$\0045\5%\0=\5&\4=\4'\0035\4(\0004\5\0\0=\5)\4=\4*\0035\4+\0005\5,\0=\5-\4=\4.\3=\0030\2B\0\2\1K\0\1\0\topts\1\0\1\topts\0\vsearch\targs\1\6\0\0\18--color=never\17--no-heading\20--with-filename\18--line-number\r--column\1\0\3\fpattern\18\\b(KEYWORDS):\targs\0\fcommand\arg\14highlight\fexclude\1\0\n\22multiline_pattern\a^.\fpattern\22.*<(KEYWORDS)\\s*:\14multiline\2\nafter\afg\fexclude\0\17max_line_len\3�\3\18comments_only\2\fkeyword\twide\vbefore\5\22multiline_context\3\n\vcolors\ttest\1\3\0\0\15Identifier\f#FF00FF\fdefault\1\3\0\0\15Identifier\f#7C3AED\thint\1\3\0\0\19DiagnosticHint\f#10B981\tinfo\1\3\0\0\19DiagnosticInfo\f#2563EB\fwarning\1\4\0\0\19DiagnosticWarn\15WarningMsg\f#FBBF24\nerror\1\0\6\fwarning\0\nerror\0\tinfo\0\fdefault\0\ttest\0\thint\0\1\4\0\0\20DiagnosticError\rErrorMsg\f#DC2626\rkeywords\tTEST\1\4\0\0\fTESTING\vPASSED\vFAILED\1\0\3\ticon\t⏲ \balt\0\ncolor\ttest\tNOTE\1\2\0\0\tINFO\1\0\3\ticon\t \balt\0\ncolor\thint\tPERF\1\4\0\0\nOPTIM\16PERFORMANCE\rOPTIMIZE\1\0\2\ticon\t \balt\0\tWARN\1\3\0\0\fWARNING\bXXX\1\0\3\ticon\t \balt\0\ncolor\fwarning\tHACK\1\0\2\ticon\t \ncolor\fwarning\tTODO\1\0\2\ticon\t \ncolor\tinfo\bFIX\1\0\a\tHACK\0\tPERF\0\tWARN\0\tTEST\0\tTODO\0\bFIX\0\tNOTE\0\balt\1\5\0\0\nFIXME\bBUG\nFIXIT\nISSUE\1\0\3\ticon\t \balt\0\ncolor\nerror\1\0\6\nsigns\2\14highlight\0\vcolors\0\vsearch\0\rkeywords\0\18sign_priority\3\b\nsetup\18todo-comments\frequire\0", "config", "todo-comments.nvim")
 time([[Config for todo-comments.nvim]], false)
 -- Config for: nvim-cmp
 time([[Config for nvim-cmp]], true)
 require('config.nvim-cmp')
 time([[Config for nvim-cmp]], false)
--- Config for: toggleterm.nvim
-time([[Config for toggleterm.nvim]], true)
-try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
-time([[Config for toggleterm.nvim]], false)
 -- Config for: octo.nvim
 time([[Config for octo.nvim]], true)
 try_loadstring("\27LJ\2\n�\1\0\0\4\0\6\0\t6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\1K\0\1\0\27suppress_missing_scope\1\0\1\27suppress_missing_scope\0\1\0\1\16projects_v2\2\nsetup\tocto\frequire\0", "config", "octo.nvim")
 time([[Config for octo.nvim]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\2\n8\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
+-- Config for: nvim-treesitter-context
+time([[Config for nvim-treesitter-context]], true)
+try_loadstring("\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\t\14max_lines\3\0\venable\1\14on_attach\0\vzindex\3\20\15trim_scope\nouter\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\tmode\vcursor\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
+time([[Config for nvim-treesitter-context]], false)
 -- Config for: github-nvim-theme
 time([[Config for github-nvim-theme]], true)
 try_loadstring("\27LJ\2\n>\0\0\3\0\3\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0004\2\0\0B\0\2\1K\0\1\0\nsetup\17github-theme\frequire\0", "config", "github-nvim-theme")
 time([[Config for github-nvim-theme]], false)
--- Config for: nvim-treesitter-context
-time([[Config for nvim-treesitter-context]], true)
-try_loadstring("\27LJ\2\n�\1\0\0\3\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\1K\0\1\0\1\0\t\tmode\vcursor\14max_lines\3\0\14on_attach\0\15trim_scope\nouter\24multiline_threshold\3\20\17line_numbers\2\22min_window_height\3\0\venable\1\vzindex\3\20\nsetup\23treesitter-context\frequire\0", "config", "nvim-treesitter-context")
-time([[Config for nvim-treesitter-context]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
@@ -355,8 +360,8 @@ time([[Config for gitsigns.nvim]], false)
 time([[Sequenced loading]], true)
 vim.cmd [[ packadd cmp-path ]]
 vim.cmd [[ packadd cmp-buffer ]]
-vim.cmd [[ packadd cmp-nvim-lsp ]]
 vim.cmd [[ packadd cmp-cmdline ]]
+vim.cmd [[ packadd cmp-nvim-lsp ]]
 time([[Sequenced loading]], false)
 
 _G._packer.inside_compile = false

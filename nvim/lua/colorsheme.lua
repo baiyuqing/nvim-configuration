@@ -357,7 +357,7 @@ require("gruvbox").setup({
 -- Lua
 require('onedark').setup  {
     -- Main options --
-    style = 'dark', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -384,8 +384,18 @@ require('onedark').setup  {
     },
 
     -- Custom Highlights --
-    colors = {}, -- Override default colors
-    highlights = {}, -- Override highlight groups
+    colors = {
+        dark_red = "#F0736A",
+        red = "#F0736A",
+        dark_purple = "#d87df3",
+        purple = "#d87df3",
+    }, -- Override default colors
+    highlights = {
+        ["@punctuation.delimiter"] = { fg = "#b8b6b4" },
+        ["@punctuation.bracket"] = { fg = "#b8b6b4" },
+        ["@punctuation.special"] = { fg = "#b8b6b4" },
+
+    }, -- Override highlight groups
 
     -- Plugins Config --
     diagnostics = {
@@ -429,19 +439,90 @@ require('vscode').setup({
 -- require('vscode').load()
 
 
+require("rose-pine").setup({
+    variant = "auto", -- auto, main, moon, or dawn
+    dark_variant = "main", -- main, moon, or dawn
+    dim_inactive_windows = false,
+    extend_background_behind_borders = true,
 
+    enable = {
+        terminal = true,
+        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+        migrations = true, -- Handle deprecated options automatically
+    },
+
+    styles = {
+        bold = true,
+        italic = true,
+        transparency = false,
+    },
+
+    groups = {
+        border = "muted",
+        link = "iris",
+        panel = "surface",
+
+        error = "love",
+        hint = "iris",
+        info = "foam",
+        note = "pine",
+        todo = "rose",
+        warn = "gold",
+
+        git_add = "foam",
+        git_change = "rose",
+        git_delete = "love",
+        git_dirty = "rose",
+        git_ignore = "muted",
+        git_merge = "iris",
+        git_rename = "pine",
+        git_stage = "iris",
+        git_text = "rose",
+        git_untracked = "subtle",
+
+        h1 = "iris",
+        h2 = "foam",
+        h3 = "rose",
+        h4 = "gold",
+        h5 = "pine",
+        h6 = "foam",
+    },
+
+    highlight_groups = {
+        -- Comment = { fg = "foam" },
+        -- VertSplit = { fg = "muted", bg = "muted" },
+    },
+
+    before_highlight = function(group, highlight, palette)
+        -- Disable all undercurls
+        -- if highlight.undercurl then
+        --     highlight.undercurl = false
+        -- end
+        --
+        -- Change palette colour
+        -- if highlight.fg == palette.pine then
+        --     highlight.fg = palette.foam
+        -- end
+    end,
+})
+
+
+vim.cmd('colorscheme onedark')
+
+--[[
 local auto_dark_mode = require('auto-dark-mode')
 
 auto_dark_mode.setup({
 	update_interval = 1000,
 	set_dark_mode = function()
         vim.api.nvim_set_option("background", "dark")
-		vim.cmd('colorscheme vscode')
+		vim.cmd('colorscheme tokyonight-night')
 	end,
 	set_light_mode = function()
-        vim.api.nvim_set_option("background", "light")
-		vim.cmd('colorscheme vscode')
+        vim.api.nvim_set_option("background", "dark")
+        vim.cmd('colorscheme github_light_colorblind')
+
 		--vim.cmd('colorscheme tokyonight-day')
 	end,
 })
-
+]]--

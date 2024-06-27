@@ -317,7 +317,7 @@ require("fidget").setup(
 
 
 --#region
-vim.opt.mouse = "a"
+--vim.opt.mouse = "a"
 vim.opt.cursorline = false
 
 if vim.g.vscode then
