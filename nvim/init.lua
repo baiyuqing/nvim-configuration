@@ -62,9 +62,6 @@ vim.g.loaded_netrwPlugin = 1
 -- optionally enable 24-bit colour
 vim.opt.termguicolors = true
 
--- empty setup using defaults
-require("nvim-tree").setup()
-
 -- OR setup with some options
 require("nvim-tree").setup({
   sort = {
@@ -200,7 +197,12 @@ require('lualine').setup {
   extensions = {}
 }
 
-require("outline").setup({})
+require("outline").setup({
+    outline_window = {
+        position = "left",
+        auto_close = false,
+    }
+})
 
 require("fidget").setup(
 {
@@ -325,4 +327,13 @@ if vim.g.vscode then
 else
     -- ordinary Neovim
 end
+
+vim.api.nvim_create_user_command('Ntt', 'NvimTreeToggle', {})
+
+-- 禁用 'd' 键
+vim.api.nvim_set_keymap('n', 'd', '<Nop>', { noremap = true, silent = true })
+
+-- 保留 'dd' 功能
+vim.api.nvim_set_keymap('n', 'dd', 'd', { noremap = true, silent = true })
+
 
