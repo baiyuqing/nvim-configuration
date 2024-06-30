@@ -138,7 +138,7 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
 --
 require("codesnap").setup({
     watermark = "",
-    code_font_family = "JetBrainsMono NFM",
+    code_font_family = "MonoLisa Nerd Font",
     has_breadcrumbs = true,
      bg_color = "#04274A",
   breadcrumbs_separator = "/"
@@ -317,6 +317,8 @@ require("fidget").setup(
     },
 })
 
+require("notify").setup()
+
 
 --#region
 --vim.opt.mouse = "a"
@@ -334,6 +336,6 @@ vim.api.nvim_create_user_command('Ntt', 'NvimTreeToggle', {})
 vim.api.nvim_set_keymap('n', 'd', '<Nop>', { noremap = true, silent = true })
 
 -- 保留 'dd' 功能
-vim.api.nvim_set_keymap('n', 'dd', 'd', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', 'dd', 'dd', { noremap = true, silent = true })
 
 

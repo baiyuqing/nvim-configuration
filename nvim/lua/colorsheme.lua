@@ -128,6 +128,10 @@ require('github-theme').setup({
       github_light_colorblind = {
           ["@string"] = { fg = "#f76dd5" },
       },
+
+      github_dark_colorblind = {
+          ["@string"] = { fg = "#f76dd5" },
+      },
   },
   groups = {},
 })
@@ -411,7 +415,7 @@ require('onedark').setup  {
 local c = require('vscode.colors').get_colors()
 require('vscode').setup({
     -- Alternatively set style in setup
-    -- style = 'light'
+    style = 'dark',
 
     -- Enable transparent background
     transparent = false,
@@ -428,10 +432,6 @@ require('vscode').setup({
     -- Override colors (see ./lua/vscode/colors.lua)
     color_overrides = {
         vscLineNumber = '#6F42C1',
-        vscBack = "#F7F1F1",
-        vscGreen = "#0A6F4C",
-        vscBlueGreen = "#0A6F4C",
-        vscLightGreen = "#0A6F4C",
     },
 
     -- Override highlight groups (see ./lua/vscode/theme.lua)
@@ -443,7 +443,46 @@ require('vscode').setup({
 })
 -- require('vscode').load()
 
-vim.cmd('colorscheme catppuccin-mocha')
+
+require("visual_studio_code").setup({
+    -- `dark` or `light`
+    mode = "dark",
+    -- Whether to load all color schemes
+    preset = true,
+    -- Whether to enable background transparency
+    transparent = false,
+    -- Whether to apply the adapted plugin
+    expands = {
+        hop = true,
+        dbui = true,
+        lazy = true,
+        aerial = true,
+        null_ls = true,
+        nvim_cmp = true,
+        gitsigns = true,
+        which_key = true,
+        nvim_tree = true,
+        lspconfig = true,
+        telescope = true,
+        bufferline = true,
+        nvim_navic = true,
+        nvim_notify = true,
+        vim_illuminate = true,
+        nvim_treesitter = true,
+        nvim_ts_rainbow = true,
+        nvim_scrollview = true,
+        nvim_ts_rainbow2 = true,
+        indent_blankline = true,
+        vim_visual_multi = true,
+    },
+    hooks = {
+        before = function(conf, colors, utils) end,
+        after = function(conf, colors, utils) end,
+    },
+})
+
+-- vim.cmd('colorscheme onedark')
+vim.cmd('colorscheme visual_studio_code')
 
 --[[
 local auto_dark_mode = require('auto-dark-mode')

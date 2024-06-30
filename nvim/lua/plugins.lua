@@ -264,6 +264,8 @@ return require('packer').startup(function(use)
     use {"navarasu/onedark.nvim"}
     use {'Mofiqul/vscode.nvim'}
     use {"rose-pine/neovim"}
+    use {"rcarriga/nvim-notify"}
+    use { "askfiy/visual_studio_code"}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
