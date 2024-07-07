@@ -89,9 +89,6 @@ require'lspconfig'.pyright.setup{
 require'lspconfig'.tsserver.setup{
     on_attach = on_attach
 }
-require'lspconfig'.azure_pipelines_ls.setup{
-    on_attach = on_attach
-}
 require'lspconfig'.clangd.setup{
     on_attach = on_attach
 }
