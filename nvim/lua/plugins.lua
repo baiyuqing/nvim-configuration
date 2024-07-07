@@ -58,7 +58,7 @@ return require('packer').startup(function(use)
             folder_arrows = 0,
         }
 
-        use {'nvim-treesitter/nvim-treesitter'}
+        use ({'nvim-treesitter/nvim-treesitter'})
         use {
             'nvim-tree/nvim-tree.lua',
         }
@@ -266,6 +266,12 @@ return require('packer').startup(function(use)
     use {"rose-pine/neovim"}
     use {"rcarriga/nvim-notify"}
     use { "askfiy/visual_studio_code"}
+
+    use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+        require('git-conflict').setup()
+    end}
+
+    -- use {'tpope/vim-fugitive'}
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins

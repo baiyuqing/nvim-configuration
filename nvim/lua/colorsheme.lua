@@ -145,6 +145,8 @@ require("tokyonight").setup({
   light_style = "day", -- The theme is used when the background is set to light
   transparent = false, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in [Neovim](https://github.com/neovim/neovim)
+  underline = false,
+  undercurl = false,
   styles = {
     -- Style to be applied to different syntax groups
     -- Value is any valid attr-list value for `:help nvim_set_hl`
@@ -481,8 +483,9 @@ require("visual_studio_code").setup({
     },
 })
 
+--vim.cmd('colorscheme visual_studio_code')
 -- vim.cmd('colorscheme onedark')
-vim.cmd('colorscheme visual_studio_code')
+vim.cmd('colorscheme tokyonight-storm')
 
 --[[
 local auto_dark_mode = require('auto-dark-mode')

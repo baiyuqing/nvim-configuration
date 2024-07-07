@@ -321,7 +321,8 @@ require("notify").setup()
 
 
 --#region
---vim.opt.mouse = "a"
+-- vim.opt.mouse = "a"
+vim.opt.mouse = ""
 vim.opt.cursorline = false
 
 if vim.g.vscode then
@@ -337,5 +338,6 @@ vim.api.nvim_set_keymap('n', 'd', '<Nop>', { noremap = true, silent = true })
 
 -- 保留 'dd' 功能
 vim.api.nvim_set_keymap('n', 'dd', 'dd', { noremap = true, silent = true })
+
 
 

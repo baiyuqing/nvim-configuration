@@ -22,7 +22,6 @@ require('mason-lspconfig').setup({
 --     - on_attach: a lua callback function to run after LSP atteches to a given buffer
 local lspconfig = require('lspconfig')
 
-
 -- Customized on_attach function
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap = true, silent = true }
@@ -119,3 +118,12 @@ vim.lsp.handlers["textDocument/diagnostic"] = vim.lsp.with(
     underline = false,
   }
 )
+
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = '●', -- 可选图标
+    },
+    signs = true,
+    underline = false, -- 禁用下划线
+    update_in_insert = false,
+})
