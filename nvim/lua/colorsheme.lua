@@ -485,7 +485,7 @@ require("visual_studio_code").setup({
 
 --vim.cmd('colorscheme visual_studio_code')
 -- vim.cmd('colorscheme onedark')
-vim.cmd('colorscheme tokyonight-storm')
+vim.cmd('colorscheme tokyonight')
 
 --[[
 local auto_dark_mode = require('auto-dark-mode')
