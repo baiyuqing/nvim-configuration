@@ -332,6 +332,7 @@ else
 end
 
 vim.api.nvim_create_user_command('Ntt', 'NvimTreeToggle', {})
+vim.api.nvim_create_user_command('Ott', 'Outline', {})
 
 -- 禁用 'd' 键
 vim.api.nvim_set_keymap('n', 'd', '<Nop>', { noremap = true, silent = true })

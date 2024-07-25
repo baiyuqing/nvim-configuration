@@ -10,7 +10,7 @@ require('mason').setup({
 
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
-    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'bashls', 'bufls', 'glslls'},
+    ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'bashls', 'bufls', 'glslls', 'zls'},
 })
 
 
@@ -109,6 +109,12 @@ require('lspconfig')['bufls'].setup{
 require('lspconfig')['glslls'].setup{
     on_attach = on_attach
 }
+
+require('lspconfig')['zls'].setup{
+    on_attach = on_attach
+}
+
+
 
 vim.lsp.handlers["textDocument/diagnostic"] = vim.lsp.with(
   vim.lsp.diagnostic.on_diagnostic, {
