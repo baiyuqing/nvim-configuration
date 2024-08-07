@@ -41,11 +41,6 @@ return require('packer').startup(function(use)
         ---------------------------------------
         use 'tanvirtin/monokai.nvim'
         use { 'neovim/nvim-lspconfig' }
-        use { 'hrsh7th/nvim-cmp', config = [[require('config.nvim-cmp')]] }
-        use { 'hrsh7th/cmp-nvim-lsp', after = 'nvim-cmp' }
-        use { 'hrsh7th/cmp-buffer', after = 'nvim-cmp' } -- buffer auto-completion
-        use { 'hrsh7th/cmp-path', after = 'nvim-cmp' } -- path auto-completion
-        use { 'hrsh7th/cmp-cmdline', after = 'nvim-cmp' } -- cmdline auto-completion
         use 'L3MON4D3/LuaSnip'
         use 'saadparwaiz1/cmp_luasnip'
         use { 'williamboman/mason.nvim' }
@@ -61,6 +56,21 @@ return require('packer').startup(function(use)
         use ({'nvim-treesitter/nvim-treesitter'})
         use {
             'nvim-tree/nvim-tree.lua',
+            config = function()
+                require('nvim-tree').setup({
+                    update_focused_file = {
+                        enable = true,       -- enables automatic update
+                        update_cwd = true,   -- updates the cwd of the tree to that of the file
+                        ignore_list = {},    -- ignore these files when updating
+                    },
+                    view = {
+                        adaptive_size = true, -- enables resizing to the file
+                    },
+                    renderer = {
+                        highlight_opened_files = "name", -- highlights the opened file
+                    },
+                })
+            end
         }
         use({
 	        "L3MON4D3/LuaSnip",
@@ -71,15 +81,18 @@ return require('packer').startup(function(use)
         })
 
         use {
-          "hrsh7th/nvim-cmp",
-          requires = {
-              "hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
-              'quangnguyen30192/cmp-nvim-ultisnips', 'hrsh7th/cmp-nvim-lua',
-              'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
-              'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
-          }
-      }
-
+            'hrsh7th/nvim-cmp',
+            requires = {
+                'hrsh7th/cmp-nvim-lsp',      -- LSP source for nvim-cmp
+                'hrsh7th/cmp-buffer',        -- Buffer completions
+                'hrsh7th/cmp-path',          -- Path completions
+                'hrsh7th/cmp-cmdline',       -- Cmdline completions
+                'saadparwaiz1/cmp_luasnip',  -- Snippet completions
+                'L3MON4D3/LuaSnip',          -- Snippet engine
+                'rafamadriz/friendly-snippets' -- Snippet collection
+            }
+        }
+      
 
     use {'fatih/vim-go'}
 
@@ -118,6 +131,7 @@ return require('packer').startup(function(use)
         end
     })
 
+    --[[
     use {
         "lukas-reineke/indent-blankline.nvim",
         config = function() require("ibl").setup(
@@ -130,6 +144,7 @@ return require('packer').startup(function(use)
         )
         end
     }
+    ]]--
 
     use {
         "lewis6991/gitsigns.nvim",
@@ -160,25 +175,6 @@ return require('packer').startup(function(use)
     use { 'folke/tokyonight.nvim' }
     use {"rebelot/kanagawa.nvim" }
     use {"marko-cerovac/material.nvim"}
-    use {
-        'nvim-treesitter/nvim-treesitter-context',
-        config = function() require('treesitter-context').setup({
-            enable = false, -- Enable this plugin (Can be enabled/disabled later via commands)
-            max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
-            min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
-            line_numbers = true,
-            multiline_threshold = 20, -- Maximum number of lines to show for a single context
-            trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-            mode = 'cursor',  -- Line used to calculate context. Choices: 'cursor', 'topline'
-            -- Separator between context and content. Should be a single character string, like '-'.
-            -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
-            separator = nil,
-            zindex = 20, -- The Z-index of the context window
-            on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
-        })
-    end
-}
-
     use {
         "folke/todo-comments.nvim",
         requires = { "nvim-lua/plenary.nvim" },
@@ -263,7 +259,6 @@ return require('packer').startup(function(use)
     use {'Mofiqul/vscode.nvim'}
     use {"rose-pine/neovim"}
     use {"rcarriga/nvim-notify"}
-    use { "askfiy/visual_studio_code"}
 
     use {'akinsho/git-conflict.nvim', tag = "*", config = function()
         require('git-conflict').setup({

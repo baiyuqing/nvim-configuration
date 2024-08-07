@@ -14,6 +14,20 @@ require('mason-lspconfig').setup({
 })
 
 
+local cmp = require'cmp'
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+    end,
+  },
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' }, -- For luasnip users.
+  }, {
+    { name = 'buffer' },
+  })
+})
 
 -- Set different settings for different languages' LSP
 -- LSP list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -68,16 +82,20 @@ lspconfig.pylsp.setup({
     }
 })
 local util = require "lspconfig/util"
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require'lspconfig'.gopls.setup{
     on_attach = on_attach,
-    root_dir = util.root_pattern("go.work", "go.mod", ".git")
+    root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+    capabilities = capabilities,
 
 }
 require'lspconfig'.rust_analyzer.setup{
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 require'lspconfig'.pyright.setup{
     on_attach = on_attach,
+    capabilities = capabilities,
     init_options = {
         settings = {
             args = {
@@ -87,12 +105,16 @@ require'lspconfig'.pyright.setup{
     },
 }
 require'lspconfig'.tsserver.setup{
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 require'lspconfig'.clangd.setup{
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 require'lspconfig'.lua_ls.setup{
+    capabilities = capabilities,
+    on_attach = on_attach,
 }
 
 --[[
@@ -102,6 +124,7 @@ require('lspconfig')['yamlls'].setup {
 --]]
 require('lspconfig')['bashls'].setup {
     on_attach = on_attach,
+    capabilities = capabilities,
 }
 require('lspconfig')['bufls'].setup{
     on_attach = on_attach

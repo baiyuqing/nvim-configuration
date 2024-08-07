@@ -347,11 +347,6 @@ require 'nordic' .setup {
         dark_background = true,
     }
 }
-require("onedarkpro").setup({
-    colors = {
-        dark = { bg = "#272927"},
-    }
-})
 
 -- Default options:
 require("gruvbox").setup({
@@ -382,7 +377,7 @@ require("gruvbox").setup({
 -- Lua
 require('onedark').setup  {
     -- Main options --
-    style = 'deep', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    style = 'cool', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
     transparent = false,  -- Show/hide background
     term_colors = true, -- Change terminal color as per the selected theme style
     ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
@@ -464,44 +459,6 @@ require('vscode').setup({
 })
 -- require('vscode').load()
 
-
-require("visual_studio_code").setup({
-    -- `dark` or `light`
-    mode = "dark",
-    -- Whether to load all color schemes
-    preset = true,
-    -- Whether to enable background transparency
-    transparent = false,
-    -- Whether to apply the adapted plugin
-    expands = {
-        hop = true,
-        dbui = true,
-        lazy = true,
-        aerial = true,
-        null_ls = true,
-        nvim_cmp = true,
-        gitsigns = true,
-        which_key = true,
-        nvim_tree = true,
-        lspconfig = true,
-        telescope = true,
-        bufferline = true,
-        nvim_navic = true,
-        nvim_notify = true,
-        vim_illuminate = true,
-        nvim_treesitter = true,
-        nvim_ts_rainbow = true,
-        nvim_scrollview = true,
-        nvim_ts_rainbow2 = true,
-        indent_blankline = true,
-        vim_visual_multi = true,
-    },
-    hooks = {
-        before = function(conf, colors, utils) end,
-        after = function(conf, colors, utils) end,
-    },
-})
-
 -- Default options
 require('nightfox').setup({
   options = {
@@ -516,7 +473,7 @@ require('nightfox').setup({
       enable = true,        -- Enable colorblind support
       simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
       severity = {
-        protan = 1,          -- Severity [0,1] for protan (red)
+        protan = 0.8,          -- Severity [0,1] for protan (red)
         deutan = 0.3,          -- Severity [0,1] for deutan (green)
         tritan = 0,          -- Severity [0,1] for tritan (blue)
       },
@@ -526,7 +483,7 @@ require('nightfox').setup({
       conditionals = "NONE",
       constants = "NONE",
       functions = "bold",
-      keywords = "NONE",
+      keywords = "bold",
       numbers = "NONE",
       operators = "NONE",
       strings = "NONE",
@@ -548,19 +505,13 @@ require('nightfox').setup({
 })
 
 -- setup must be called before loading
-vim.cmd("colorscheme nightfox")
-
-
---vim.cmd('colorscheme catppuccin-frappe')
---[[
 local auto_dark_mode = require('auto-dark-mode')
 auto_dark_mode.setup({
 	update_interval = 1000,
 	set_dark_mode = function()
-        vim.cmd('colorscheme tokyonight-storm')
+        vim.cmd('colorscheme tokyonight')
 	end,
 	set_light_mode = function()
-        vim.cmd('colorscheme github_light_default')
+        vim.cmd('colorscheme tokyonight-day')
 	end,
 })
---]]

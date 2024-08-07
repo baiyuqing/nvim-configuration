@@ -319,7 +319,6 @@ require("fidget").setup(
 
 require("notify").setup()
 
-
 --#region
 -- vim.opt.mouse = "a"
 vim.opt.mouse = ""
@@ -339,9 +338,6 @@ vim.api.nvim_set_keymap('n', 'd', '<Nop>', { noremap = true, silent = true })
 
 -- 保留 'dd' 功能
 vim.api.nvim_set_keymap('n', 'dd', 'dd', { noremap = true, silent = true })
-
-
-
 
 vim.keymap.set('n', 'co', '<Plug>(git-conflict-ours)')
 vim.keymap.set('n', 'ct', '<Plug>(git-conflict-theirs)')
