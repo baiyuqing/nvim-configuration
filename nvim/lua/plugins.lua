@@ -274,6 +274,7 @@ return require('packer').startup(function(use)
 
     use {"EdenEast/nightfox.nvim"}
 
+    use {"RRethy/vim-illuminate"}
 
     -- use {'tpope/vim-fugitive'}
 
