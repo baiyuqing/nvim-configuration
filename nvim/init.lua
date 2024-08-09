@@ -402,3 +402,7 @@ require('illuminate').configure({
     -- case_insensitive_regex: sets regex case sensitivity
     case_insensitive_regex = false,
 })
+
+---
+vim.api.nvim_set_keymap('n', 'K', '<CMD>lua show_type_info()<CR>', { noremap = true, silent = true })
+
