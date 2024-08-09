@@ -105,13 +105,6 @@ return require('packer').startup(function(use)
     }
 
     use {
-        "akinsho/toggleterm.nvim", tag = '*',
-        config = function()
-            require("toggleterm").setup()
-        end
-    }
-
-    use {
         "nvim-telescope/telescope.nvim", tag = '0.1.8',
         requires = {
           {'nvim-lua/plenary.nvim'}
@@ -153,25 +146,6 @@ return require('packer').startup(function(use)
     }
 
     use {"nvim-lua/plenary.nvim"}
-
-    use {
-        'pwntester/octo.nvim',
-        requires = {
-            'nvim-lua/plenary.nvim',
-            'nvim-telescope/telescope.nvim',
-            -- OR 'ibhagwan/fzf-lua',
-            'nvim-tree/nvim-web-devicons',
-        },
-        config = function ()
-            require"octo".setup({
-                suppress_missing_scope = {
-                    projects_v2 = true,
-                }
-            }
-            )
-        end
-    }
-
     use { 'folke/tokyonight.nvim' }
     use {"rebelot/kanagawa.nvim" }
     use {"marko-cerovac/material.nvim"}
