@@ -96,7 +96,6 @@ return require('packer').startup(function(use)
 
     use {'fatih/vim-go'}
 
-    use {'rust-lang/rust.vim'}
     use {'sindrets/diffview.nvim'}
     use { "catppuccin/nvim", as = "catppuccin" }
     use { "ibhagwan/fzf-lua",
@@ -276,6 +275,7 @@ return require('packer').startup(function(use)
 
     use {"RRethy/vim-illuminate"}
     use {'neoclide/coc.nvim', branch = 'release'}
+    use {"rust-lang/rust.vim"}
 
     -- use {'tpope/vim-fugitive'}
 

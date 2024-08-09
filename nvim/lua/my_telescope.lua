@@ -57,10 +57,12 @@ function M.my_find_file()
     builtin.fd()
 end
 
+--[[
 vim.keymap.set('n', 'gd', builtin.lsp_definitions, {noremap = true, silent = true})
 vim.keymap.set('n', 'gr', builtin.lsp_references, {noremap = true, silent = true})
 vim.keymap.set('n', 'gi', builtin.lsp_implementations, {noremap = true, silent = true})
 vim.keymap.set('n', 'gD', builtin.lsp_type_definitions, {})
+--]]
 -- vim.keymap.set('n', 'ff', builtin.live_grep, {})
 vim.keymap.set('n', 'ff','<cmd>lua my_telescope.my_live_grep()<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', 'fd','<cmd>lua my_telescope.my_find_file()<CR>', {noremap = true, silent = true})

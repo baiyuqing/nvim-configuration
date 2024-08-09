@@ -8,6 +8,7 @@ require('mason').setup({
     }
 })
 
+--[[
 require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
     ensure_installed = { 'pylsp', 'gopls', 'lua_ls', 'rust_analyzer', 'pyright', 'bashls', 'bufls', 'glslls', 'zls'},
@@ -117,11 +118,6 @@ require'lspconfig'.lua_ls.setup{
     on_attach = on_attach,
 }
 
---[[
-require('lspconfig')['yamlls'].setup {
-  on_attach = on_attach,
-}
---]]
 require('lspconfig')['bashls'].setup {
     on_attach = on_attach,
     capabilities = capabilities,
@@ -153,3 +149,4 @@ vim.diagnostic.config({
     underline = false, -- 禁用下划线
     update_in_insert = false,
 })
+--]]

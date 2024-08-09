@@ -5,6 +5,7 @@ require('colorsheme')
 require('bai')
 require('lsp')
 require('my_telescope')
+require('my_coc')
 
 -- 配置 nvim-treesitter
 require'nvim-treesitter.configs'.setup {
@@ -402,7 +403,4 @@ require('illuminate').configure({
     -- case_insensitive_regex: sets regex case sensitivity
     case_insensitive_regex = false,
 })
-
----
-vim.api.nvim_set_keymap('n', 'K', '<CMD>lua show_type_info()<CR>', { noremap = true, silent = true })
 
