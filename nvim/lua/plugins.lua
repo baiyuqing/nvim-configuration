@@ -275,7 +275,6 @@ return require('packer').startup(function(use)
     use {"EdenEast/nightfox.nvim"}
 
     use {"RRethy/vim-illuminate"}
-    use {'neoclide/coc.nvim', branch = 'release'}
 
     -- use {'tpope/vim-fugitive'}
 
