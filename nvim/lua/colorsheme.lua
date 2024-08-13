@@ -512,6 +512,6 @@ auto_dark_mode.setup({
         vim.cmd('colorscheme onedark')
 	end,
 	set_light_mode = function()
-        vim.cmd('colorscheme onedark')
+        vim.cmd('colorscheme catppuccin-mocha')
 	end,
 })
