@@ -5,6 +5,7 @@ require('colorsheme')
 require('bai')
 require('lsp')
 require('my_telescope')
+require('nvim-cmp')
 
 -- 配置 nvim-treesitter
 require'nvim-treesitter.configs'.setup {

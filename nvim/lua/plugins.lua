@@ -235,6 +235,10 @@ return require('packer').startup(function(use)
     use {"rcarriga/nvim-notify"}
     use {"EdenEast/nightfox.nvim"}
     use {"RRethy/vim-illuminate"}
+    use {
+      'stevearc/overseer.nvim',
+      config = function() require('overseer').setup() end
+    }
 
     -- use {'tpope/vim-fugitive'}
 
