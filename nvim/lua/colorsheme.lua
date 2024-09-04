@@ -504,18 +504,15 @@ require('nightfox').setup({
   groups = {},
 })
 
-vim.cmd('colorscheme catppuccin-mocha')
 -- setup must be called before loading
---[[
 local auto_dark_mode = require('auto-dark-mode')
 auto_dark_mode.setup({
 	update_interval = 1000,
 	set_dark_mode = function()
-        vim.cmd('colorscheme onedark')
+        vim.cmd('colorscheme catppuccin-mocha')
 	end,
 	set_light_mode = function()
-        vim.cmd('colorscheme catppuccin-mocha')
+        vim.cmd('colorscheme tokyonight-day')
 	end,
 })
 
-]]--
