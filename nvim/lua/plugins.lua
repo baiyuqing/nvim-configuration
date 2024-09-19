@@ -250,7 +250,7 @@ return require('packer').startup(function(use)
 
                 fancy = {
                     enable = true,        -- enable fancy mode
-                    head = { cursor = "▷", texthl = "SmoothCursor", linehl = nil }, -- false to disable fancy head
+                    head = { cursor = "▶", texthl = "SmoothCursor", linehl = nil }, -- false to disable fancy head
                     body = {
                         { cursor = "󰝥", texthl = "SmoothCursorRed" },
                         { cursor = "󰝥", texthl = "SmoothCursorOrange" },
@@ -319,6 +319,13 @@ return require('packer').startup(function(use)
             require('goto-preview').setup {}
         end
     }
+
+
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+        require("toggleterm").setup()
+    end}
+
+    use 'marko-cerovac/material.nvim'
 
     -- use {'tpope/vim-fugitive'}
 

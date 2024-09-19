@@ -146,6 +146,9 @@ require('github-theme').setup({
       },
       github_light_colorblind = {
           ["@string"] = { fg = "#f76dd5" },
+          bg1 = "#FAFAFA",
+          bg0 = bg1,
+          bg3 = bg1,
       },
 
       github_dark_colorblind = {
@@ -504,15 +507,86 @@ require('nightfox').setup({
   groups = {},
 })
 
--- setup must be called before loading
+require('material').setup({
+    contrast = {
+        terminal = false, -- Enable contrast for the built-in terminal
+        sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+        floating_windows = true, -- Enable contrast for floating windows
+        cursor_line = false, -- Enable darker background for the cursor line
+        lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
+        non_current_windows = false, -- Enable contrasted background for non-current windows
+        filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
+    },
+
+    styles = { -- Give comments style such as bold, italic, underline etc.
+        comments = { italic = true },
+        strings = { --[[ bold = true ]] },
+        keywords = { --[[ underline = true ]] },
+        functions = {  bold = true --[[, undercurl = true ]] },
+        variables = {},
+        operators = {},
+        types = {},
+    },
+
+    plugins = { -- Uncomment the plugins that you use to highlight them
+        -- Available plugins:
+        -- "coc",
+        -- "colorful-winsep",
+        -- "dap",
+        -- "dashboard",
+        -- "eyeliner",
+        -- "fidget",
+        -- "flash",
+        -- "gitsigns",
+        -- "harpoon",
+        -- "hop",
+        -- "illuminate",
+        -- "indent-blankline",
+        -- "lspsaga",
+        -- "mini",
+        -- "neogit",
+        -- "neotest",
+        -- "neo-tree",
+        -- "neorg",
+        -- "noice",
+        -- "nvim-cmp",
+        -- "nvim-navic",
+        -- "nvim-tree",
+        -- "nvim-web-devicons",
+        -- "rainbow-delimiters",
+        -- "sneak",
+        -- "telescope",
+        -- "trouble",
+        -- "which-key",
+        -- "nvim-notify",
+    },
+
+    disable = {
+        colored_cursor = true, -- Disable the colored cursor
+        borders = true, -- Disable borders between vertically split windows
+        background = false, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+        term_colors = false, -- Prevent the theme from setting terminal colors
+        eob_lines = false -- Hide the end-of-buffer lines
+    },
+
+    high_visibility = {
+        lighter = false, -- Enable higher contrast text for lighter style
+        darker = true, -- Enable higher contrast text for darker style
+    },
+    lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+    async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
+    custom_colors = nil, -- If you want to override the default colors, set this to a function
+    custom_highlights = {}, -- Overwrite highlights with your own
+})
+
+
 local auto_dark_mode = require('auto-dark-mode')
 auto_dark_mode.setup({
 	update_interval = 1000,
 	set_dark_mode = function()
-        vim.cmd('colorscheme catppuccin-mocha')
+        vim.cmd('colorscheme dracula')
 	end,
 	set_light_mode = function()
-        vim.cmd('colorscheme tokyonight-day')
+        vim.cmd('colorscheme github_light_colorblind')
 	end,
 })
-
