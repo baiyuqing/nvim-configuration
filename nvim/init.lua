@@ -406,4 +406,4 @@ require('illuminate').configure({
 
 ---
 vim.api.nvim_set_keymap('n', 'K', '<CMD>lua show_type_info()<CR>', { noremap = true, silent = true })
-
+vim.o.cursorline = true

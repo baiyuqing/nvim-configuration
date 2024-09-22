@@ -124,7 +124,6 @@ return require('packer').startup(function(use)
         end
     })
 
-    --[[
     use {
         "lukas-reineke/indent-blankline.nvim",
         config = function() require("ibl").setup(
@@ -137,7 +136,6 @@ return require('packer').startup(function(use)
         )
         end
     }
-    ]]--
 
     use {
         "lewis6991/gitsigns.nvim",

@@ -408,11 +408,11 @@ require('onedark').setup  {
 
     -- Custom Highlights --
     colors = {
-        dark_red = "#F0736A",
-        red = "#F0736A",
+        dark_red = "#fc8e86",
+        red = "#fc8e86",
         dark_purple = "#d87df3",
         purple = "#d87df3",
-        bg0 = "#1f252e",
+        bg0 = "#111317",
     }, -- Override default colors
     highlights = {
         ["@punctuation.delimiter"] = { fg = "#b8b6b4" },
@@ -584,9 +584,9 @@ local auto_dark_mode = require('auto-dark-mode')
 auto_dark_mode.setup({
 	update_interval = 1000,
 	set_dark_mode = function()
-        vim.cmd('colorscheme dracula')
+        vim.cmd('colorscheme onedark')
 	end,
 	set_light_mode = function()
-        vim.cmd('colorscheme github_light_colorblind')
+        vim.cmd('colorscheme onedark')
 	end,
 })
