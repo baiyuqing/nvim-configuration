@@ -218,14 +218,12 @@ return require('packer').startup(function(use)
     }
 
     use { "hedyhli/outline.nvim" }
-    use {'AlexvZyl/nordic.nvim'}
     use { "j-hui/fidget.nvim" }
 
     use {"olimorris/onedarkpro.nvim"}
 
     use { "ellisonleao/gruvbox.nvim" }
 
-    use {'f-person/auto-dark-mode.nvim'}
     use {"NLKNguyen/papercolor-theme"}
     use {"navarasu/onedark.nvim"}
     use {'Mofiqul/vscode.nvim'}
@@ -324,6 +322,8 @@ return require('packer').startup(function(use)
     end}
 
     use 'marko-cerovac/material.nvim'
+    use 'eldritch-theme/eldritch.nvim'
+    use 'ribru17/bamboo.nvim'
 
     -- use {'tpope/vim-fugitive'}
 
