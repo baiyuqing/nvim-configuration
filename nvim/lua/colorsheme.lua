@@ -348,7 +348,7 @@ require('onedark').setup  {
     -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
     code_style = {
         comments = 'italic',
-        keywords = 'none',
+        keywords = 'bold',
         functions = 'bold',
         strings = 'none',
         variables = 'none'
@@ -569,7 +569,7 @@ require("eldritch").setup({
 require('bamboo').setup {
   -- Main options --
   -- NOTE: to use the light theme, set `vim.o.background = 'light'`
-  style = 'multiplex', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
+  style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
   toggle_style_key = nil, -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
   toggle_style_list = { 'vulgaris', 'multiplex', 'light' }, -- List of styles to toggle between
   transparent = false, -- Show/hide background
@@ -585,9 +585,9 @@ require('bamboo').setup {
     comments = { italic = true },
     conditionals = { italic = true },
     keywords = {},
-    functions = {},
+    functions = {bold = true},
     namespaces = { italic = true },
-    parameters = { italic = true },
+    parameters = {},
     strings = {},
     variables = {},
   },
@@ -598,7 +598,9 @@ require('bamboo').setup {
   },
 
   -- Custom Highlights --
-  colors = {}, -- Override default colors
+  colors = {
+      red = "#bbc2ed",
+  }, -- Override default colors
   highlights = {
       ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
       ["@punctuation.bracket"] = { fg = "#f2f0eb" },
@@ -613,5 +615,5 @@ require('bamboo').setup {
   },
 }
 
-vim.cmd('colorscheme bamboo-multiplex')
-
+-- vim.cmd('colorscheme bamboo')
+vim.cmd('colorscheme github_dark_tritanopia')

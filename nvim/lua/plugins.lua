@@ -323,7 +323,8 @@ return require('packer').startup(function(use)
 
     use 'marko-cerovac/material.nvim'
     use 'eldritch-theme/eldritch.nvim'
-    use 'ribru17/bamboo.nvim'
+    use 'baiyuqing/bamboo.nvim'
+    use 'github/copilot.vim'
 
     -- use {'tpope/vim-fugitive'}
 
