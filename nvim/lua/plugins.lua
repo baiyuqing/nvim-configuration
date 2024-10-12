@@ -325,6 +325,15 @@ return require('packer').startup(function(use)
     use 'eldritch-theme/eldritch.nvim'
     use 'baiyuqing/bamboo.nvim'
     use 'github/copilot.vim'
+    use 'sainnhe/gruvbox-material'
+    use({
+        "neanias/everforest-nvim",
+        -- Optional; default configuration will be used if setup isn't called.
+        config = function()
+            require("everforest").setup()
+        end,
+    })
+    use 'oxfist/night-owl.nvim'
 
     -- use {'tpope/vim-fugitive'}
 
