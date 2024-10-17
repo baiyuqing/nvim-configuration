@@ -606,6 +606,12 @@ require('bamboo').setup {
       ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
       ["@punctuation.bracket"] = { fg = "#f2f0eb" },
       ["@punctuation.special"] = { fg = "#f2f0eb" },
+      ["@punctuation.separator"] = { fg = "#f2f0eb" },
+      ["@punctuation.parenthesis"] = { fg = "#f2f0eb" },
+      ["@punctuation.terminator"] = { fg = "#f2f0eb" },
+      ["@punctuation.accessor"] = { fg = "#f2f0eb" },
+      ["@punctuation.other"] = { fg = "#f2f0eb" },
+      ["@punctuation"] = { fg = "#f2f0eb" },
   }, -- Override highlight groups
 
   -- Plugins Config --
@@ -697,5 +703,5 @@ night_owl.setup({
     transparent_background = false,
 })
 
--- vim.cmd('colorscheme bamboo')
-vim.cmd('colorscheme night-owl')
+vim.cmd('colorscheme bamboo')
+-- vim.cmd('colorscheme night-owl')
