@@ -261,6 +261,7 @@ return require('packer').startup(function(use)
         end,
     })
     use 'oxfist/night-owl.nvim'
+    use  "dgox16/oldworld.nvim"
 
     -- use {'tpope/vim-fugitive'}
 

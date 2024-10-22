@@ -1,11 +1,4 @@
 -- define your colorscheme here
-local colorscheme = 'github_dark'
-local is_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
-if not is_ok then
-    vim.notify('colorscheme ' .. colorscheme .. ' not found!')
-    return
-end
-
 
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -50,6 +43,12 @@ require("catppuccin").setup({
                 ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
                 ["@punctuation.bracket"] = { fg = "#f2f0eb" },
                 ["@punctuation.special"] = { fg = "#f2f0eb" },
+                ["@punctuation.separator"] = { fg = "#f2f0eb" },
+                ["@punctuation.parenthesis"] = { fg = "#f2f0eb" },
+                ["@punctuation.terminator"] = { fg = "#f2f0eb" },
+                ["@punctuation.accessor"] = { fg = "#f2f0eb" },
+                ["@punctuation.other"] = { fg = "#f2f0eb" },
+                ["@punctuation"] = { fg = "#f2f0eb" },
                 ["@string"] = { fg = "#f76dd5" },
                 -- background = { bg = "#1A1B26" }
             }
@@ -59,6 +58,12 @@ require("catppuccin").setup({
                 ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
                 ["@punctuation.bracket"] = { fg = "#f2f0eb" },
                 ["@punctuation.special"] = { fg = "#f2f0eb" },
+                ["@punctuation.separator"] = { fg = "#f2f0eb" },
+                ["@punctuation.parenthesis"] = { fg = "#f2f0eb" },
+                ["@punctuation.terminator"] = { fg = "#f2f0eb" },
+                ["@punctuation.accessor"] = { fg = "#f2f0eb" },
+                ["@punctuation.other"] = { fg = "#f2f0eb" },
+                ["@punctuation"] = { fg = "#f2f0eb" },
                 ["@string"] = { fg = "#f76dd5" },
                 -- background = { bg = "#1A1B26" }
             }
@@ -68,6 +73,12 @@ require("catppuccin").setup({
                 ["@punctuation.delimiter"] = { fg = "#f2f0eb" },
                 ["@punctuation.bracket"] = { fg = "#f2f0eb" },
                 ["@punctuation.special"] = { fg = "#f2f0eb" },
+                ["@punctuation.separator"] = { fg = "#f2f0eb" },
+                ["@punctuation.parenthesis"] = { fg = "#f2f0eb" },
+                ["@punctuation.terminator"] = { fg = "#f2f0eb" },
+                ["@punctuation.accessor"] = { fg = "#f2f0eb" },
+                ["@punctuation.other"] = { fg = "#f2f0eb" },
+                ["@punctuation"] = { fg = "#f2f0eb" },
                 ["@string"] = { fg = "#f76dd5" },
                 -- background = { bg = "#1A1B26" }
             }
@@ -104,7 +115,7 @@ require('github-theme').setup({
     module_default = true,     -- Default enable value for modules
     styles = {                 -- Style to be applied to different syntax groups
       comments = 'italic',       -- Value is any valid attr-list value `:help attr-list`
-      functions = 'NONE',
+      functions = 'bold',
       keywords = 'NONE',
       variables = 'NONE',
       conditionals = 'NONE',
@@ -430,7 +441,7 @@ require('nightfox').setup({
       enable = true,        -- Enable colorblind support
       simulate_only = false, -- Only show simulated colorblind colors and not diff shifted
       severity = {
-        protan = 0.8,          -- Severity [0,1] for protan (red)
+        protan = 0.3,          -- Severity [0,1] for protan (red)
         deutan = 0.3,          -- Severity [0,1] for deutan (green)
         tritan = 0,          -- Severity [0,1] for tritan (blue)
       },
@@ -440,7 +451,7 @@ require('nightfox').setup({
       conditionals = "NONE",
       constants = "NONE",
       functions = "bold",
-      keywords = "bold",
+      keywords = "NONE",
       numbers = "NONE",
       operators = "NONE",
       strings = "NONE",
@@ -570,7 +581,7 @@ require("eldritch").setup({
 require('bamboo').setup {
   -- Main options --
   -- NOTE: to use the light theme, set `vim.o.background = 'light'`
-  style = 'vulgaris', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
+  style = 'multiplex', -- Choose between 'vulgaris' (regular), 'multiplex' (greener), and 'light'
   toggle_style_key = nil, -- Keybind to toggle theme style. Leave it nil to disable it, or set it to a string, e.g. "<leader>ts"
   toggle_style_list = { 'vulgaris', 'multiplex', 'light' }, -- List of styles to toggle between
   transparent = false, -- Show/hide background
@@ -584,11 +595,11 @@ require('bamboo').setup {
   -- You can also configure styles with a string, e.g. keywords = 'italic,bold'
   code_style = {
     comments = { italic = true },
-    conditionals = { italic = true },
+    conditionals = { italic = false },
     keywords = {},
     functions = {bold = true},
-    namespaces = { italic = true },
-    parameters = {},
+    namespaces = { italic = false },
+    parameters = { italic = false },
     strings = {},
     variables = {},
   },
@@ -703,5 +714,16 @@ night_owl.setup({
     transparent_background = false,
 })
 
-vim.cmd('colorscheme bamboo')
--- vim.cmd('colorscheme night-owl')
+require("oldworld").setup({
+    styles = {
+        booleans = { italic = true, bold = true },
+    },
+    integrations = {
+        hop = true,
+        telescope = false,
+    },
+    highlight_overrides = {
+    }
+})
+
+vim.cmd('colorscheme catppuccin-frappe')
