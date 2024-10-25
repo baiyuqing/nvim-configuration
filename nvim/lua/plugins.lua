@@ -262,6 +262,11 @@ return require('packer').startup(function(use)
     })
     use 'oxfist/night-owl.nvim'
     use  "dgox16/oldworld.nvim"
+    use 'shaunsingh/nord.nvim'
+    use {
+        "rockyzhang24/arctic.nvim",
+        requires = { "rktjmp/lush.nvim" }
+    }
 
     -- use {'tpope/vim-fugitive'}
 
