@@ -5,3 +5,5 @@ local opt = vim.opt
 opt.mouse = ""
 opt.wrap = true
 opt.list = false
+vim.api.nvim_create_user_command("Ntt", "NvimTreeToggle", {})
+vim.api.nvim_create_user_command("Ott", "Outline", {})
