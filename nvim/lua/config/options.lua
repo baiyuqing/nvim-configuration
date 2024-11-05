@@ -4,3 +4,4 @@
 local opt = vim.opt
 opt.mouse = ""
 opt.wrap = true
+opt.list = false
