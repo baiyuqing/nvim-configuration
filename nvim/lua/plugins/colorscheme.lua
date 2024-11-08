@@ -145,7 +145,7 @@ return {
       styles = {
         -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
-        comments = { italic = true },
+        Gcomments = { italic = true },
         keywords = { bold = false },
         functions = { bold = true },
         variables = {},
@@ -169,5 +169,21 @@ return {
   },
   {
     "josebalius/vim-light-chromeclipse",
+  },
+  {
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("github-theme").setup({
+        specs = {
+          github_light_colorblind = {
+            bg0 = "#e3dada",
+            bg1 = "#e3dada",
+          },
+        },
+      })
+    end,
   },
 }

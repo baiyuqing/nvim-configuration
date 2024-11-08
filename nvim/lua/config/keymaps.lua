@@ -8,3 +8,10 @@ vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
 })
 vim.g.copilot_no_tab_map = true
 vim.g.mapleader = " "
+
+local telescope = require("telescope.builtin")
+
+-- Bind `ff` to search using fd with the current word under the cursor
+vim.keymap.set("n", "ff", function()
+  telescope.live_grep({ default_text = vim.fn.expand("<cword>") })
+end, { desc = "Find File with current word" })
