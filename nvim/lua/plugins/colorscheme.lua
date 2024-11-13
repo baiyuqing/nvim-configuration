@@ -179,8 +179,8 @@ return {
       require("github-theme").setup({
         specs = {
           github_light_colorblind = {
-            bg0 = "#e3dada",
-            bg1 = "#e3dada",
+            bg0 = "#dbd9d9",
+            bg1 = "#f5eded",
           },
         },
       })
