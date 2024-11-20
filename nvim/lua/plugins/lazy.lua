@@ -201,12 +201,12 @@ return {
       update_interval = 1000,
       set_dark_mode = function()
         vim.api.nvim_set_option_value("background", "dark", {})
-        vim.cmd("colorscheme github_dark_dimmed")
-        -- vim.cmd("colorscheme bamboo")
+        -- vim.cmd("colorscheme github_dark_dimmed")
+        vim.cmd("colorscheme tokyonight-storm")
       end,
       set_light_mode = function()
-        vim.api.nvim_set_option_value("background", "light", {})
-        vim.cmd("colorscheme github_light_colorblind")
+        vim.api.nvim_set_option_value("background", "dark", {})
+        vim.cmd("colorscheme bamboo")
       end,
     },
   },
