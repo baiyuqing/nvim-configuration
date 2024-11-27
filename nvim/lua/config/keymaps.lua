@@ -15,3 +15,4 @@ local telescope = require("telescope.builtin")
 vim.keymap.set("n", "ff", function()
   telescope.live_grep({ default_text = vim.fn.expand("<cword>") })
 end, { desc = "Find File with current word" })
+
