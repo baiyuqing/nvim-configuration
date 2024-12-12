@@ -85,87 +85,32 @@ return {
   },
   {
     "navarasu/onedark.nvim",
-    opts = {
-      -- Main options --
-      style = "dark", -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-      transparent = false, -- Show/hide background
-      term_colors = true, -- Change terminal color as per the selected theme style
-      ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-      cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-
-      -- toggle theme style ---
-      toggle_style_key = nil, -- keybind to toggle theme style. Leave it nil to disable it, or set it to a string, for example "<leader>ts"
-      toggle_style_list = { "dark", "darker", "cool", "deep", "warm", "warmer", "light" }, -- List of styles to toggle between
-
-      -- Change code style ---
-      -- Options are italic, bold, underline, none
-      -- You can configure multiple style with comma separated, For e.g., keywords = 'italic,bold'
-      code_style = {
-        comments = "italic",
-        keywords = "none",
-        functions = "bold",
-        strings = "none",
-        variables = "none",
-      },
-
-      -- Lualine options --
-      lualine = {
-        transparent = false, -- lualine center bar transparency
-      },
-
-      -- Custom Highlights --
-      colors = {}, -- Override default colors
-      highlights = {
-        light = {
-          ["@punctuation.delimiter"] = { fg = "#141413" },
-          ["@punctuation.bracket"] = { fg = "#141413" },
-          ["@punctuation.special"] = { fg = "#141413" },
-          ["@punctuation.separator"] = { fg = "#141413" },
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      require('onedark').setup {
+        style = 'darker',
+        transparent = false,
+        lualine = {
+          transparent = false, -- lualine center bar transparency
         },
-      }, -- Override highlight groups
-
-      -- Plugins Config --
-      diagnostics = {
-        darker = true, -- darker colors for diagnostic
-        undercurl = true, -- use undercurl instead of underline for diagnostics
-        background = true, -- use background color for virtual text
-      },
-    },
-  },
-  {
-    "miikanissi/modus-themes.nvim",
-    opts = {
-      -- Theme comes in two styles `modus_operandi` and `modus_vivendi`
-      -- `auto` will automatically set style based on background set with vim.o.background
-      style = "auto",
-      variant = "default", -- Theme comes in four variants `default`, `tinted`, `deuteranopia`, and `tritanopia`
-      transparent = false, -- Transparent background (as supported by the terminal)
-      dim_inactive = false, -- "non-current" windows are dimmed
-      hide_inactive_statusline = false, -- Hide statuslines on inactive windows. Works with the standard **StatusLine**, **LuaLine** and **mini.statusline**
-      styles = {
-        -- Style to be applied to different syntax groups
-        -- Value is any valid attr-list value for `:help nvim_set_hl`
-        Gcomments = { italic = true },
-        keywords = { bold = false },
-        functions = { bold = true },
-        variables = {},
-      },
-
-      --- You can override specific color groups to use other groups or a hex color
-      --- Function will be called with a ColorScheme table
-      --- Refer to `extras/lua/modus_operandi.lua` or `extras/lua/modus_vivendi.lua` for the ColorScheme table
-      ---@param colors ColorScheme
-      on_colors = function(colors)
-        -- how to mdify operandi colorscheme
-      end,
-
-      --- You can override specific highlights to use other groups or a hex color
-      --- Function will be called with a Highlights and ColorScheme table
-      --- Refer to `extras/lua/modus_operandi.lua` or `extras/lua/modus_vivendi.lua` for the Highlights and ColorScheme table
-      ---@param highlights Highlights
-      ---@param colors ColorScheme
-      on_highlights = function(highlights, colors) end,
-    },
+        highlights = {
+          ["@punctuation.delimiter"] = { fg = "#c7c9c7" },
+          ["@punctuation.bracket"] = { fg = "#c7c9c7" },
+          ["@punctuation.special"] = { fg = "#c7c9c7" },
+          ["@punctuation.separator"] = { fg = "#c7c9c7" },
+          ["@punctuation.parenthesis"] = { fg = "#c7c9c7" },
+          ["@punctuation.terminator"] = { fg = "#c7c9c7" },
+          ["@punctuation.accessor"] = { fg = "#c7c9c7" },
+          ["@punctuation.other"] = { fg = "#c7c9c7" },
+          ["@punctuation"] = { fg = "#c7c9c7" },
+        },
+        colors = {
+          dark_red = "#f57d99",
+          red = "#f57d99",
+        },
+      }
+    end
   },
   {
     "josebalius/vim-light-chromeclipse",
@@ -185,5 +130,10 @@ return {
         },
       })
     end,
+  },
+  { "Mofiqul/dracula.nvim" },
+  {"Mofiqul/vscode.nvim"},
+  {
+    "hgoose/temple.vim"
   },
 }

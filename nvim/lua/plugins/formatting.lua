@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
   opts = {
-    autoformat = false, -- globally disables auto-formatting
+    autoformat = true, -- globally disables auto-formatting
   },
 }
