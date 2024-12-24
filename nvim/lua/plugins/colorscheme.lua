@@ -61,7 +61,7 @@ return {
     },
   },
   {
-    "baiyuqing/bamboo.nvim",
+    "ribru17/bamboo.nvim",
     opts = {
       -- Custom Highlights --
       colors = {
@@ -89,7 +89,7 @@ return {
     priority = 1000,
     config = function ()
       require('onedark').setup {
-        style = 'darker',
+        style = 'deep',
         transparent = false,
         lualine = {
           transparent = false, -- lualine center bar transparency
@@ -124,16 +124,36 @@ return {
       require("github-theme").setup({
         specs = {
           github_light_colorblind = {
-            bg0 = "#dbd9d9",
             bg1 = "#f5eded",
           },
+          github_light_default = {
+            bg1 = "#f5eded",
+          },
+        },
+        options = {
+          styles = {
+            comments = "italic",
+          },
+          transparent = false,
         },
       })
     end,
   },
   { "Mofiqul/dracula.nvim" },
-  {"Mofiqul/vscode.nvim"},
+  {
+    "Mofiqul/vscode.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function ()
+      require('vscode').setup({
+        italic_comments = true,
+      })
+    end
+  },
   {
     "hgoose/temple.vim"
+  },
+  {
+    "marko-cerovac/material.nvim"
   },
 }
