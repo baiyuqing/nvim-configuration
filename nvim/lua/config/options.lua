@@ -31,6 +31,6 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
-
+vim.api.nvim_create_user_command('Q', 'qa', {})
 
 vim.g.snacks_animate = false

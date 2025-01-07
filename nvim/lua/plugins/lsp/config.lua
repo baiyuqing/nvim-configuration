@@ -23,6 +23,8 @@ return {
     })
   end,
   opts = {
-    inlay_hints = { enabled = false },
+    inlay_hints = {
+      enabled = true,
+    },
   },
 }

@@ -15,9 +15,6 @@ return {
   -- Configure LazyVim to load gruvbox
   {
     "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
   },
 
   -- change trouble config
@@ -29,16 +26,6 @@ return {
 
   -- disable trouble
   { "folke/trouble.nvim", enabled = false },
-
-  -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    enabled = false,
-    dependencies = { "hrsh7th/cmp-emoji" },
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
 
   -- change some telescope options and a keymap to browse plugin files
   {
@@ -72,7 +59,7 @@ return {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         pyright = {},
       },
-      inlay_hints = { enabled = false },
+      inlay_hints = { enabled = false},
     },
   },
 
@@ -179,12 +166,13 @@ return {
       set_dark_mode = function()
         vim.api.nvim_set_option_value("background", "dark", {})
         -- vim.cmd("colorscheme github_dark_dimmed")
-        -- vim.cmd("colorscheme dracula")
-        vim.cmd("colorscheme  onedark")
+        -- vim.cmd("colorscheme onedark")
+        vim.cmd("colorscheme catppuccin-mocha")
       end,
       set_light_mode = function()
         vim.api.nvim_set_option_value("background", "light", {})
-        vim.cmd("colorscheme github_light_tritanopia")
+        -- vim.cmd("colorscheme github_light_tritanopia")
+        vim.cmd("colorscheme github_light_default")
       end,
     },
   },
@@ -238,7 +226,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       dashboard = { enabled = true },
-      indent = { enabled = false },
+      indent = { enabled = true },
       notifier = {
         enabled = false,
         timeout = 3000,
