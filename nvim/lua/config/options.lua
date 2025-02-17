@@ -34,3 +34,4 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_user_command('Q', 'qa', {})
 
 vim.g.snacks_animate = false
+vim.g.lazyvim_check_order = false

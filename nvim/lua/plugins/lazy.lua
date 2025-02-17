@@ -166,8 +166,8 @@ return {
       set_dark_mode = function()
         vim.api.nvim_set_option_value("background", "dark", {})
         -- vim.cmd("colorscheme github_dark_dimmed")
-        -- vim.cmd("colorscheme onedark")
-        vim.cmd("colorscheme catppuccin-mocha")
+        vim.cmd("colorscheme onedark")
+        -- vim.cmd("colorscheme tokyonight-storm")
       end,
       set_light_mode = function()
         vim.api.nvim_set_option_value("background", "light", {})
@@ -226,7 +226,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       dashboard = { enabled = true },
-      indent = { enabled = true },
+      indent = { enabled = false },
       notifier = {
         enabled = false,
         timeout = 3000,
