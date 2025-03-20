@@ -161,18 +161,29 @@ return {
 
   {
     "f-person/auto-dark-mode.nvim",
+    enabled = true,
     opts = {
       update_interval = 10000,
       set_dark_mode = function()
         vim.api.nvim_set_option_value("background", "dark", {})
-        -- vim.cmd("colorscheme github_dark_dimmed")
-        vim.cmd("colorscheme onedark")
+        -- vim.cmd("colorscheme github_dark_colorblind")
         -- vim.cmd("colorscheme tokyonight-storm")
+        -- vim.cmd("colorscheme catppuccin-frappe")
+        -- vim.cmd("colorscheme onedark")
+        -- vim.cmd("colorscheme github_dark_dimmed")
+        -- vim.cmd("colorscheme sorbet")
+        vim.cmd("colorscheme kanagawa")
       end,
       set_light_mode = function()
-        vim.api.nvim_set_option_value("background", "light", {})
-        -- vim.cmd("colorscheme github_light_tritanopia")
-        vim.cmd("colorscheme github_light_default")
+        vim.api.nvim_set_option_value("background", "dark", {})
+        -- vim.cmd("colorscheme github_dark_colorblind")
+        -- vim.cmd("colorscheme github_dark_dimmed")
+        -- vim.api.nvim_set_option_value("background", "light", {})
+        -- vim.cmd("colorscheme onedark")
+        -- vim.cmd("colorscheme catppuccin-frappe")
+        -- vim.cmd("colorscheme github_light_default")
+        -- vim.cmd("colorscheme sorbet")
+        vim.cmd("colorscheme kanagawa")
       end,
     },
   },
@@ -226,7 +237,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       dashboard = { enabled = true },
-      indent = { enabled = false },
+      indent = { enabled = true },
       notifier = {
         enabled = false,
         timeout = 3000,
