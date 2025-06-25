@@ -90,8 +90,6 @@ return {
         "javascript",
         "json",
         "lua",
-        "markdown",
-        "markdown_inline",
         "python",
         "query",
         "regex",
@@ -172,18 +170,30 @@ return {
         -- vim.cmd("colorscheme onedark")
         -- vim.cmd("colorscheme github_dark_dimmed")
         -- vim.cmd("colorscheme sorbet")
-        vim.cmd("colorscheme kanagawa")
+        -- vim.cmd("colorscheme kanagawa")
+        -- vim.cmd("colorscheme catppuccin-mocha")
+        vim.cmd("colorscheme vscode")
+        -- vim.cmd("colorscheme bamboo")
+        --vim.cmd("colorscheme iceberg")
+        -- vim.cmd("colorscheme github_dark")
+        -- vim.cmd("colorscheme  tokyonight-night")
       end,
       set_light_mode = function()
         vim.api.nvim_set_option_value("background", "dark", {})
         -- vim.cmd("colorscheme github_dark_colorblind")
-        -- vim.cmd("colorscheme github_dark_dimmed")
-        -- vim.api.nvim_set_option_value("background", "light", {})
-        -- vim.cmd("colorscheme onedark")
+        -- vim.cmd("colorscheme bamboo")
         -- vim.cmd("colorscheme catppuccin-frappe")
         -- vim.cmd("colorscheme github_light_default")
         -- vim.cmd("colorscheme sorbet")
-        vim.cmd("colorscheme kanagawa")
+        -- vim.cmd("colorscheme kanagawa")
+        vim.cmd("colorscheme vscode")
+        -- vim.cmd("colorscheme github_dark_dimmed")
+        -- vim.cmd("colorscheme catppuccin-mocha")
+        -- vim.cmd("colorscheme bamboo")
+        -- vim.cmd("colorscheme iceberg")
+        -- vim.cmd("colorscheme github_dark")
+        -- vim.cmd("colorscheme  tokyonight-storm")
+        -- vim.cmd("colorscheme  onedark")
       end,
     },
   },
@@ -237,7 +247,7 @@ return {
     opts = {
       bigfile = { enabled = true },
       dashboard = { enabled = true },
-      indent = { enabled = true },
+      indent = { enabled = false },
       notifier = {
         enabled = false,
         timeout = 3000,

@@ -10,6 +10,9 @@ vim.api.nvim_create_user_command("Ott", "Outline", {})
 vim.opt.relativenumber = false
 vim.b.autoformat = false
 vim.opt.cursorline = false
+vim.opt.undofile = false
+vim.opt.autochdir = false
+vim.opt.shadafile = "NONE"
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "go",
@@ -35,3 +38,4 @@ vim.api.nvim_create_user_command('Q', 'qa', {})
 
 vim.g.snacks_animate = false
 vim.g.lazyvim_check_order = false
+vim.o.mouse = ""

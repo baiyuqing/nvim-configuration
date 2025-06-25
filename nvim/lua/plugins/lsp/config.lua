@@ -21,6 +21,17 @@ return {
         },
       },
     })
+    lspconfig.yamlls.setup(
+      {
+        settings = {
+          yaml = {
+            format = {
+              enable = false,
+            },
+          }
+        }
+      }
+    )
   end,
   opts = {
     inlay_hints = {
