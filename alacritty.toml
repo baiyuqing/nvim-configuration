@@ -1,6 +1,11 @@
 # Colors (Tokyo Night)
 # Source https//github.com/zatchheems/tokyo-night-alacritty-theme
 
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/vscode.toml"
+]
+
 # Default colors
 [colors.primary]
 background = '#1a1b26'
@@ -29,15 +34,18 @@ cyan    = '#0db9d7'
 white   = '#acb0d0'
 
 [font]
-size = 16.3
+size = 15.4
+
+[font.offset]
+y = 4
 
 [font.normal]
-family = "MonoLisaSC Nerd Font"
+family = "MonoLisa Nerd Font"
 style = "Regular"
 
 
 [font.bold]
-family = "MonoLisaSC Nerd Font"
+family = "MonoLisa Nerd Font"
 style = "Regular"
 
 [[hints.enabled]]
