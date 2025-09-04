@@ -1,0 +1,43 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "vim_mode": true,
+  "telemetry": {
+    "metrics": false,
+    "diagnostics": false
+  },
+  "ui_font_size": 16,
+  "buffer_line_height": "comfortable",
+  "buffer_font_size": 15.5,
+  "buffer_font_family": "MonoLisa Nerd Font",
+  "buffer_font_weight": 400,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Tokyo Night"
+  },
+  "buffer_font_features": {
+    "calt": false,
+    "liga": false
+  },
+  "terminal": {
+    "font_features": {
+      "calt": false,
+      "liga": false
+    },
+    "copy_on_select": true
+  },
+  "soft_wrap": "preferred_line_length",
+  "preferred_line_length": 120,
+  "disable_ai": true,
+  "preview_tabs": {
+    "enabled": true,
+    "enable_preview_from_code_navigation": true
+  }
+}
