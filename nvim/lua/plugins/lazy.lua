@@ -146,7 +146,7 @@ return {
 
   -- add any tools you want to have installed below
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     opts = {
       ensure_installed = {
        "stylua",
@@ -172,11 +172,12 @@ return {
         -- vim.cmd("colorscheme sorbet")
         -- vim.cmd("colorscheme kanagawa")
         -- vim.cmd("colorscheme catppuccin-mocha")
-        vim.cmd("colorscheme vscode")
+        -- vim.cmd("colorscheme vscode")
+        -- vim.cmd("colorscheme bamboo-multiplex")
         -- vim.cmd("colorscheme bamboo")
         --vim.cmd("colorscheme iceberg")
         -- vim.cmd("colorscheme github_dark")
-        -- vim.cmd("colorscheme  tokyonight-night")
+        vim.cmd("colorscheme  tokyonight-night")
       end,
       set_light_mode = function()
         vim.api.nvim_set_option_value("background", "dark", {})
@@ -186,13 +187,15 @@ return {
         -- vim.cmd("colorscheme github_light_default")
         -- vim.cmd("colorscheme sorbet")
         -- vim.cmd("colorscheme kanagawa")
-        vim.cmd("colorscheme vscode")
+        -- vim.cmd("colorscheme vscode")
+        -- vim.cmd("colorscheme bamboo-multiplex")
         -- vim.cmd("colorscheme github_dark_dimmed")
         -- vim.cmd("colorscheme catppuccin-mocha")
         -- vim.cmd("colorscheme bamboo")
         -- vim.cmd("colorscheme iceberg")
         -- vim.cmd("colorscheme github_dark")
         -- vim.cmd("colorscheme  tokyonight-storm")
+        vim.cmd("colorscheme  tokyonight-night")
         -- vim.cmd("colorscheme  onedark")
       end,
     },
@@ -239,6 +242,16 @@ return {
   },
   {
     'akinsho/toggleterm.nvim', version = "*", config = true
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+        },
+      },
+    },
   },
   {
     "folke/snacks.nvim",
@@ -306,5 +319,19 @@ return {
         end,
       })
     end,
-  }
+  },
+
+  {
+    "pwntester/octo.nvim",
+    cmd = "Octo",
+    event = { { event = "BufReadCmd", pattern = "octo://*" } },
+    opts = {
+      enable_builtin = true,
+      default_to_projects_v2 = true,
+      default_merge_method = "squash",
+      picker = "telescope",
+    },
+    keys = {
+    },
+  },
 }

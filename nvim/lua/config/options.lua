@@ -5,7 +5,7 @@ local opt = vim.opt
 opt.mouse = ""
 opt.wrap = true
 opt.list = false
-vim.api.nvim_create_user_command("Ntt", "Neotree toggle", {})
+vim.api.nvim_create_user_command("Ntt", "Neotree reveal", {})
 vim.api.nvim_create_user_command("Ott", "Outline", {})
 vim.opt.relativenumber = false
 vim.b.autoformat = false
